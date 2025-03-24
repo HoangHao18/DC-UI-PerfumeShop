@@ -11,11 +11,11 @@ const getListRoles = (roleList) => ({
 export const getListRolesAsync = () => (dispatch) => {
         RoleService.getAllRoles()
         .then(response => {
-            console.log("response: ", response);
+          
             dispatch(getListRoles(response.data.reverse()));
         })
         .catch((error) => {
-            console.log("error: ",error);
+            
         });
 }
       

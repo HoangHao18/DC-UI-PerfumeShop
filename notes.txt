@@ -1,0 +1,6 @@
+Login
+adminaccount@gmail.com - pass: 123456
+normalaccount@gmail.com - pass: 123456
+reporterUsername@gmail.com - pass: reporterpassword
+
+//npm run deploy

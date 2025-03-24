@@ -7,6 +7,7 @@ import PragranceTypeItem from '../PragranceTypeItem';
 import React, { useEffect, useState } from "react";
 
 import pragrance_list_ex from '../../../assets/json/list-pragrance.json';
+import { returnUrl } from '../../../helpers';
 
 const settings = {
     dots: true,
@@ -27,7 +28,6 @@ export default function ProductDetailImageSlider({listImage}){
     const [imageListRender, setImageListRender] = useState(listImage);
     useEffect(()=>{
         setImageListRender(listImage)
-        //console.log("productListRender: ", productListRender)
     },[listImage])
 
     return(
@@ -35,7 +35,7 @@ export default function ProductDetailImageSlider({listImage}){
              <Slider {...settings}  
                 customPaging={(i) => {
                         // return <div><img src={process.env.REACT_APP_API_IMG + imageListRender[i].path}></img></div>;
-                        return <div><img src={imageListRender[i]}></img></div>;
+                        return <div><img src={returnUrl(imageListRender[i])}></img></div>;
                 }}
                 dotsClass="slick-dots custom-indicator">
              {
@@ -44,7 +44,7 @@ export default function ProductDetailImageSlider({listImage}){
                              
                             imageListRender.map((item, index) => 
                                 <div key={index} className="slide-item">
-                                   <div><img src={item}></img></div>
+                                   <div><img src={returnUrl(item)}></img></div>
                                 </div> 
                             )
                             

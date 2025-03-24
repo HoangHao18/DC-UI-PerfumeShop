@@ -8,10 +8,9 @@ import product_list_ex from '../../../assets/json/list-product-hot.json';
 export default function ProductItemsHorizontal({isLoading, productList = [...product_list_ex]}){
     const [productListRender, setProductListRender] = useState(productList);
     const [isLoadingRender, setIsLoadingRender] =useState (isLoading)   
-    useEffect(()=>{
-        setProductListRender(productList)
-        //console.log("productListRender: ", productListRender)
-    },[productList])
+    // useEffect(()=>{
+    //     setProductListRender(productList)
+    // },[productList])
 
     useEffect(()=>{
         setIsLoadingRender(isLoading)
@@ -26,7 +25,7 @@ export default function ProductItemsHorizontal({isLoading, productList = [...pro
                         productListRender && productListRender.length > 0 ? (
                              
                             productListRender.map((item, index) => 
-                                <div key={index} className="pi-container">
+                                <div key={item.id} className="pi-container">
                                     <ProductItem
                                         //image={process.env.REACT_APP_API_IMG + item.images[0].path}
                                         image={item.image}

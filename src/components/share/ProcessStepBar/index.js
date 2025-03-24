@@ -18,7 +18,7 @@ export default function ProcessStepBar({
 }){
     return(
         <div className={containerClass}>
-            <ul class="progressbar">
+            <ul className="progressbar">
                 {
                     listStep.map((item, index)=>
                         <li className={stepnow > item.value ? "complete" : stepnow == item.value ? "active": ''}>{item.label}</li>

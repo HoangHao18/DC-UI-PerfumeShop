@@ -11,7 +11,7 @@ const getListCustomers = (customersList) => ({
 export const getListCustomersAsync = () => (dispatch) => {
         CustomerService.getAllCustomers()
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getListCustomers(response.data.reverse()));
         })
         .catch((error) => {
@@ -43,7 +43,7 @@ export const getCustomerByEmailAsyncB = (email)  => {
     return async function(dispatch) {     
         try{
             let response = (await CustomerService.getSingleCustomer(email));
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(getCustomerByEmail(response.data));

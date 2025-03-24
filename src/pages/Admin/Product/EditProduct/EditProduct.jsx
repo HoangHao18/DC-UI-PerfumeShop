@@ -87,7 +87,7 @@ function EditProduct() {
     })
     
     useEffect(() => {
-        console.log("productEdit",productEdit)
+
         if(productEdit && categoryOptions && manufactureOptions){
             const lf = productEdit.fragrances.map( ({id, name}) => ({value: id, label: name}))
             setFormData({
@@ -105,7 +105,7 @@ function EditProduct() {
 
 
     useEffect(() => {
-        console.log("productEdit",productEdit)
+
         if(productEdit && categoryOptions && manufactureOptions){
             const lf = productEdit.fragrances.map( ({id, name}) => ({value: id, label: name}))
             setFormData({
@@ -129,7 +129,7 @@ function EditProduct() {
           return (
             <div className="img-product-2" key={index}>
                 <img src={process.env.REACT_APP_API_IMG + img.path} alt="" key={img} />
-                <span className="icon-delete-img-2" onClick={()=>handleDeleteImgRender_PE(index)}> <i class='bx bx-x-circle icon-del-img'></i></span>
+                <span className="icon-delete-img-2" onClick={()=>handleDeleteImgRender_PE(index)}> <i className='bx bx-x-circle icon-del-img'></i></span>
             </div>
             )
         });
@@ -156,12 +156,12 @@ function EditProduct() {
     const handleDeleteImgRender = (index) => {
         const newI = urlSelectedImages.slice();
         newI.splice(index,1);
-        console.log("splice:",newI)
+
         setUrlSelectedImages(newI) ;
 
         let newImgPost = {...fileImgPost};
         delete newImgPost[index]
-        console.log("splice newImgPost:",newImgPost)
+
         setFileImgPost(newImgPost) ; 
         
     }
@@ -181,19 +181,19 @@ function EditProduct() {
                 (file) => URL.revokeObjectURL(file) // avoid memory leak
             );
     
-            console.log("e.target.files: ",e.target.files)
-            console.log("Array.from(e.target.files): ", Array.from(e.target.files));
-            console.log("filesArray: ", filesArray);
+
+
+
         }
       };
     
       const renderPhotos = (source) => {
-        console.log("source: ", source);
+
         return source.map((photo, index) => {
           return (
             <div className="img-product-2" key={index}>
                 <img src={photo} alt="" key={photo} />
-                <span className="icon-delete-img-2" onClick={()=>handleDeleteImgRender(index)}> <i class='bx bx-x-circle icon-del-img'></i></span>
+                <span className="icon-delete-img-2" onClick={()=>handleDeleteImgRender(index)}> <i className='bx bx-x-circle icon-del-img'></i></span>
             </div>
             )
         });
@@ -201,7 +201,7 @@ function EditProduct() {
 
 
       useEffect(() => {
-        console.log("fileImgPost:",fileImgPost)
+
         setFormData({
             ...formData,
             imagesadd: fileImgPost
@@ -243,7 +243,7 @@ function EditProduct() {
     }
 
     useEffect(() => {
-        console.log("Form Data: ", formData); //note
+
         setFomValidError(checkValidateInput(formData));
     }, [formData]);
 
@@ -298,10 +298,10 @@ function EditProduct() {
     const status = "oops something wrong";
     function handleSave(evt) {
         evt.preventDefault();
-        console.log("check save onclick")
+
         if (!isValidForm) return;
 
-        console.log("check valid")
+
 
         const data = new FormData();
         data.append("id", id);
@@ -325,7 +325,7 @@ function EditProduct() {
             data.append("idImagesDefaultNew", [])
         }
         
-        console.log("fileImgPost",fileImgPost)
+
         if(fileImgPost.length != 0){
             for (const key of Object.keys(fileImgPost)) {
                 data.append("imagesAdd", fileImgPost[key])
@@ -336,10 +336,10 @@ function EditProduct() {
             data.append("imagesAdd", [])
         }
         
-        console.log("dataaaaaaaaa: ",data)
+
         dispatch(editProductAsync(id, data))
         .then(res => {
-            console.log("ok: ",res )
+
             if (res.ok) {
                 // Thành công
                 //console.log("errResponse",errResponse)
@@ -348,7 +348,7 @@ function EditProduct() {
                 
             } else {
                 // Thất bại
-                console.log("status",status)
+
             }
         });
     }
@@ -362,7 +362,7 @@ function EditProduct() {
         <div>
             <div className="edit-product-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Edit Product</span>
                 </h2>
                 <div>
@@ -445,7 +445,7 @@ function EditProduct() {
                         <div className="row row-img">
                             <label className="label label-images" name="image">Images</label>
                             {/* <input type="file" name="images" id="images" multiple hidden onChange={handleImageChange} />
-                            <label htmlFor="images" className="label label-choose-img"><i class='bx bx-image-add icon-choose-img'></i>Add Image</label> */}
+                            <label htmlFor="images" className="label label-choose-img"><i className='bx bx-image-add icon-choose-img'></i>Add Image</label> */}
                             <div className="result">{renderPhotos_PE(formData.images)}</div>
                             {/* { formValidError.images &&  <label className="label-error">{formValidError.images}</label> } */}
                         </div>
@@ -453,7 +453,7 @@ function EditProduct() {
                         <div className="row row-img">
                             {/* <label className="label label-images" name="image">Images</label> */}
                             <input type="file" name="images-add" id="images-add" multiple hidden onChange={handleImageChange} />
-                            <label htmlFor="images-add" className="label label-choose-img"><i class='bx bx-image-add icon-choose-img'></i>Add Image</label>
+                            <label htmlFor="images-add" className="label label-choose-img"><i className='bx bx-image-add icon-choose-img'></i>Add Image</label>
                             <div className="result">{renderPhotos(urlSelectedImages)}</div>
                             { formValidError.images &&  <label className="label-error">{formValidError.images}</label> }
                         </div>

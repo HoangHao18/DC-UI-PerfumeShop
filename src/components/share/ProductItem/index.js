@@ -5,6 +5,7 @@ import StarRated from '../StarRated';
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { addProductCartAsync } from '../../../redux/actions/cartAction';
+import { returnUrl } from '../../../helpers';
 
 export default function ProductItem({
     isHorizontal = false,
@@ -16,7 +17,6 @@ export default function ProductItem({
 }){
     let history = useHistory();
     const handleOpenDetailProduct = (idP) => {
-        //console.log("idP",idP)
         history.push(`/product-detail/${idP}`)
     }
 
@@ -29,9 +29,9 @@ export default function ProductItem({
     return (
 
         isHorizontal ? 
-        <div className="product-item horizontal" onClick={() => handleOpenDetailProduct(id)}>
+        <div className="product-item horizontal" onClick={() => handleOpenDetailProduct(id)} key={id}> 
             <div className="pi-image">
-                <img src={image} alt=""></img>
+                <img src={returnUrl(image)} alt=""></img>
                 <div className="btn-add-to-cart"><Button01 isRadios={true}>add to cart</Button01></div>
                 
             </div>
@@ -46,7 +46,7 @@ export default function ProductItem({
         <div className="product-item" onClick={() => handleOpenDetailProduct(id)}>
             <div className="pi-image">
                     
-                <img src={image} alt=""></img>
+                <img src={returnUrl(image)} alt=""></img>
                 <div className="btn-add-to-cart" onClick={() => handleAddCartQuick(id)}><Button01 isRadios={true}>add to cart</Button01></div>
                 
             </div>

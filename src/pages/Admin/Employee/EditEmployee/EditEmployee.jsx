@@ -79,7 +79,7 @@ function EditEmployee() {
 
     useEffect(() => {
         roleList && setRoleOptions(roleList.map( ({role, name}) => ({value: role, label: name, isDisabled: !(role-1)})));
-        console.log("roleOptions: ", roleOptions)
+
      }, [roleList]);
 
     useEffect(() => {
@@ -118,7 +118,7 @@ function EditEmployee() {
     }
 
     useEffect(() => {
-        console.log("kkk22: ", formData); //note
+
         setFomValidError(checkValidateInput(formData));
     }, [formData]);
 
@@ -153,16 +153,16 @@ function EditEmployee() {
         if (!formD.addressNo) {
             err.addressNo = "Address is required."
         }
-        console.log("mmm", err)
+
 
         if (err.name || err.phone || err.password || err.email || err.addressNo) {
             setIsValidForm(false)
             //err.isValidForm = false;
-            console.log("vao falsse")
+
         } else {
             setIsValidForm(true)
             //err.isValidForm = true;
-            console.log("vao true")
+
         }
 
         return err;
@@ -175,10 +175,10 @@ function EditEmployee() {
     //const status = "oops something wrong";
     function handleSaveUser(evt) {
         evt.preventDefault();
-        console.log("check save onclick",{...formData, gender: formData.gender.value, role: formData.role.value, address: formData.addressNo + ", "+ formData.cdw} )
+
         //if (!isValidForm) return;
 
-        console.log("check valid")
+
             const roleNew = {
                 role: formData.role.value, 
                 name: formData.role.label
@@ -190,8 +190,8 @@ function EditEmployee() {
             // }
             dispatch(editRoleEmployeeAsync({...employeeEdit.account, role: roleNew}))
             .then(res => {
-                console.log("ok 1: ",{...employeeEdit.account, role: roleNew} )
-                console.log("ok: ",res.ok )
+
+
                 if (res.ok) {
                   // Thành công
                     // console.log("errResponse",errResponse)
@@ -220,7 +220,7 @@ function EditEmployee() {
     }
 
     const setAddessChoose = (data)=>{
-        console.log("cdw: ",data)
+
         setFormData({
             ...formData,
             cdw:  data.ward + ", " + data.district + ", " + data.city
@@ -231,7 +231,7 @@ function EditEmployee() {
         <div>
             <div className="add-box-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Edit Employee</span>
                 </h2>
                 <div>

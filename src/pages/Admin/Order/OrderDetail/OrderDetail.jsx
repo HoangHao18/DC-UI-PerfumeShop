@@ -97,12 +97,12 @@ function OrderDetail() {
     // }, []);
 
     useEffect(() => {
-       console.log("startStep: ",startStep)
+
     }, [startStep]);
 
     useEffect(() => {
-        console.log("startStep 1: ",startStep)
-        console.log("orderSingle: ",orderSingle)
+
+
      }, []);
 
 
@@ -197,8 +197,8 @@ function OrderDetail() {
             <td><NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} /> VND</td>
             <td><NumberFormat value={item.product.cost} displayType={'text'} thousandSeparator={true} /> VND</td>
             {/* <td>
-                <span onClick={()=>handleEdit(item.importId)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                <span onClick={()=>handleDelete(item.importId)}> <i class='bx bx-trash iconDelete no'></i></span>
+                <span onClick={()=>handleEdit(item.importId)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                <span onClick={()=>handleDelete(item.importId)}> <i className='bx bx-trash iconDelete no'></i></span>
             </td> */}
         </tr>
     )
@@ -209,7 +209,7 @@ function OrderDetail() {
         <div>
             <div className="order-detail-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Order Detail</span>
                 </h2>
                 <div>

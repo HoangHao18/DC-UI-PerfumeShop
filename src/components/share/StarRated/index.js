@@ -12,13 +12,13 @@ export default function StarRated({rated}){
                 [...Array(5)].map((start,i) => {
                     const ratingValue = i + 1;
                     return(
-                        <span>
+                        <span key={i}>
                             {
                                 float_part > 0 && ratingValue === (int_part + 1) ? 
-                                <i class='bx bxs-star-half star-icon' style={{"color": `${vari.starRated}`}}></i> :
+                                <i className='bx bxs-star-half star-icon' style={{"color": `${vari.starRated}`}}></i> :
                                 ratingValue <= rated ? 
-                                <i class='bx bxs-star star-icon' style={{"color": `${vari.starRated}`}}></i> :
-                                <i class='bx bxs-star star-icon' style={{"color": `${vari.starRatingUnfilled}`}}></i>
+                                <i className='bx bxs-star star-icon' style={{"color": `${vari.starRated}`}}></i> :
+                                <i className='bx bxs-star star-icon' style={{"color": `${vari.starRatingUnfilled}`}}></i>
                             }  
                         </span>
                     )

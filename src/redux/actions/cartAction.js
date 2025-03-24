@@ -11,7 +11,7 @@ const getCart = (cart) => ({
 export const getCartAsync = () => (dispatch) => {
     CartService.getCartCustomer()
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getCart(response.data));
         })
         .catch((error) => {
@@ -28,7 +28,7 @@ export const addProductCartAsync = ({ productid, number }) => {
     return async function(dispatch) {     
         try{
             let response = (await CartService.addProductCart({ productid, number }) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(addProductCart());
@@ -43,8 +43,8 @@ export const addProductCartAsync = ({ productid, number }) => {
                 toast.error("PLEASE LOGIN")
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
-            toast.error(error.response.data)
+
+            toast.error(error?.response?.data??"")
             toast.error("PLEASE LOGIN")
             return{
                 ok: false
@@ -62,18 +62,18 @@ const deleteProductCart = () => ({
 export const deleteProductCartAsync = (productid) => (dispatch) => {
         CartService.deleteProductCart(productid)
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(deleteProductCart());
             dispatch(getCartAsync());
             toast.success("DELETE SUCCESS");
         })
         .catch((error) => {
-            console.log("error.response: ", error.response);
+
             // const errorList = Object.values(error.response.data.message);
             // errorList.map((item) => {
             //     toast.error(item);
             // })
-            toast.error(error.response.data)
+            toast.error(error?.response?.data??"")
         });
 }
 
@@ -119,7 +119,7 @@ export const editNumberProductCartAsync = ({ productid, number }) => {
     return async function(dispatch) {     
         try{
             let response = (await CartService.addProductCart({ productid, number }) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(editNumberProductCart());
@@ -134,8 +134,8 @@ export const editNumberProductCartAsync = ({ productid, number }) => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
-            toast.error(error.response.data)
+
+            toast.error(error?.response?.data??"")
             return{
                 ok: false
             }

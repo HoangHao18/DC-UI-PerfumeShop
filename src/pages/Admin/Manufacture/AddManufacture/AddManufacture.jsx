@@ -36,7 +36,7 @@ function AddManufacture() {
     }
 
     useEffect(() => {
-        console.log("kkk22: ", formData); //note
+
         setFomValidError(checkValidateInput(formData));
     }, [formData]);
 
@@ -87,15 +87,15 @@ function AddManufacture() {
     const status = "oops something wrong";
     function handleSave(evt) {
         evt.preventDefault();
-        console.log("check save onclick")
+
         if (!isValidForm) return;
 
-        console.log("check valid")
-        console.log("check valid", formData)
+
+
         
         dispatch(createManufactureAsync(formData))
         .then(res => {
-            console.log("ok: ",res )
+
             if (res.ok) {
                 // Thành công
                 //console.log("errResponse",errResponse)
@@ -110,7 +110,7 @@ function AddManufacture() {
                 
             } else {
                 // Thất bại
-                console.log("status",status)
+
             }
         });
     }
@@ -124,7 +124,7 @@ function AddManufacture() {
         <div>
             <div className="add-box-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Add Manufacture</span>
                 </h2>
                 <div>

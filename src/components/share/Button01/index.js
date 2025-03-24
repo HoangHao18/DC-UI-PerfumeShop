@@ -11,10 +11,10 @@ export default function Button01({
 }){
     if(isRadios){
         return(
-           <Link to={linkTo}><div className="my-button radios" style={{"width":`${width}`, "height": `${height}`, "line-height": `${height}`}}>{children}</div></Link>
+           <Link to={linkTo}><div className="my-button radios" style={{"width":`${width}`, "height": `${height}`, "lineHeight": `${height}`}}>{children}</div></Link>
         ) 
     }
     return(
-        <Link to={linkTo}><div className="my-button" style={{"width":`${width}`, "height": `${height}`, "line-height": `${height}`}}>{children}</div></Link>
+        <Link to={linkTo}><div className="my-button" style={{"width":`${width}`, "height": `${height}`, "lineHeight": `${height}`}}>{children}</div></Link>
     )
 }

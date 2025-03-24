@@ -1,8 +1,9 @@
+import { returnUrl } from '../../../helpers';
 import './style.scss';
 
 export default function HomeBanner(){
     const style = {
-        backgroundImage: "url('/assets/images/HomeBanner01.jpg')"
+        backgroundImage: `url(${returnUrl('/assets/images/HomeBanner01.jpg')})`
     }
 
     return(

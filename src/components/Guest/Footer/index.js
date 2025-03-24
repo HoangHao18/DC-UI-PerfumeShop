@@ -11,9 +11,9 @@ export default function Footer(){
                     <div className="col-5 f-local">
                         <div className="f-item-title">COSMOS</div>
                         <div className="f-item-content">
-                            <span><i class='bx bx-map'></i> 97 Man Thien, Hiep Phu, Quan 9</span>
-                            <span><i class='bx bx-envelope' ></i> cosmos@gmail.com</span>
-                            <span><i class='bx bx-phone'></i> 0314159265</span>
+                            <span><i className='bx bx-map'></i> 97 Man Thien, Hiep Phu, Quan 9</span>
+                            <span><i className='bx bx-envelope' ></i> cosmos@gmail.com</span>
+                            <span><i className='bx bx-phone'></i> 0314159265</span>
                         </div>
                         
                     </div>
@@ -45,9 +45,9 @@ export default function Footer(){
             </div>
 
             <div className="f-last">
-                <span className="fl-icon"><i class='bx bx-crown'></i></span>
-                <span className="fl-icon"><i class='bx bx-rocket'></i></span>
-                <span className="fl-icon"><i class='bx bx-planet'></i></span>
+                <span className="fl-icon"><i className='bx bx-crown'></i></span>
+                <span className="fl-icon"><i className='bx bx-rocket'></i></span>
+                <span className="fl-icon"><i className='bx bx-planet'></i></span>
             </div>
         </div>
     )

@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './style.scss'
 import 'animate.css'
 import { ArrowNext, ArrowPrev } from './Arrow'
+import { returnUrl } from "../../../helpers";
 
 const settings = {
     // dots: true,
@@ -27,7 +28,7 @@ export default function HeaderSlider() {
       <Slider {...settings}>
         <div>
           <div className="img-header-slider">
-            <img src="/assets/images/headerSlide04.png" alt=""></img>
+            <img src={returnUrl("/assets/images/headerSlide04.png")} alt=""></img>
           </div>
           <div className="content-header-slider">
             <p className="first-chs">New Arrivals Everyday</p>
@@ -38,7 +39,7 @@ export default function HeaderSlider() {
 
         <div>
           <div className="img-header-slider">
-            <img src="/assets/images/headerSlide05.png" alt=""></img>
+            <img src={returnUrl("/assets/images/headerSlide05.png")} alt=""></img>
           </div>
           <div className="content-header-slider">
             <p className="first-chs">New Arrivals Everyday</p>
@@ -49,7 +50,7 @@ export default function HeaderSlider() {
 
         <div>
           <div className="img-header-slider">
-            <img src="/assets/images/headerSlide03.jpg" alt=""></img>
+            <img src={returnUrl("/assets/images/headerSlide03.jpg")} alt=""></img>
           </div>
           <div className="content-header-slider">
             <p className="first-chs">New Arrivals Everyday</p>

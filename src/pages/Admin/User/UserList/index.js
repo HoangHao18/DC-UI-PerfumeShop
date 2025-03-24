@@ -75,8 +75,8 @@ export default function User(){
             <td>{item.role}</td>
             <td>{item.isActive.toString()}</td>
             <td>
-                <span onClick={()=>handleEdit(item._id)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                <span onClick={()=>handleDelete(item._id)}> <i class='bx bx-trash iconDelete'></i></span>
+                <span onClick={()=>handleEdit(item._id)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                <span onClick={()=>handleDelete(item._id)}> <i className='bx bx-trash iconDelete'></i></span>
             </td>
         </tr>
     )

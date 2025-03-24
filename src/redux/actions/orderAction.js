@@ -11,7 +11,7 @@ const getListOrders = (orderList) => ({
 export const getListOrdersAsync = () => (dispatch) => {
         OrderService.getAllOrders()
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getListOrders(response.data));
         })
         .catch((error) => {
@@ -28,7 +28,7 @@ export const createOrderAsync = (data) => {
     return async function(dispatch) {     
         try{
             let response = (await OrderService.createOrder(data) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(createOrder());
@@ -43,7 +43,7 @@ export const createOrderAsync = (data) => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false
@@ -78,7 +78,7 @@ export const getSingleOrderAsync = (id)  => {
     return async function(dispatch) {     
         try{
             let response = (await OrderService.getSingleOrder(id));
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(getSingleOrder(response.data));
@@ -115,7 +115,7 @@ export const getOrdersCustomerAsync = (customerId)  => {
     return async function(dispatch) {     
         try{
             let response = (await OrderService.getOrdersByIdCUstomer(customerId));
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(getOrdersCustomer(response.data));
@@ -196,7 +196,7 @@ export const updateOrderStatusAsync = (id, status)  => {
     return async function(dispatch) {     
         try{
             let response = (await OrderService.updateStatus(id, status));
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(updateOrderStatus());
@@ -207,7 +207,7 @@ export const updateOrderStatusAsync = (id, status)  => {
                 }
             }
             else{//call api not success not run in here
-                console.log("response.eror: ", response.error);
+
                 
             } 
         }catch(error){

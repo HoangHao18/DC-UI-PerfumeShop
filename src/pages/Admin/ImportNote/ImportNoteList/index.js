@@ -17,7 +17,7 @@ export default function ImportNote(){
 
     const employeeList = useSelector((state) => state.importNote.importNoteList);
     const isLoading = useSelector(state => state.importNote.isLoading)
-    console.log("employeeList",employeeList,"isloading", isLoading);
+
     
 
     useEffect(() => {
@@ -73,11 +73,11 @@ export default function ImportNote(){
             <td>{item.status === 2 ? "Nhập Thành Công" : item.status === 1 ? "Đang Xử Lý" : "Đã Xóa"}</td>     
             <td>
                 {
-                    item.status === 1 ?  <span onClick={()=>handleEdit(item.importId)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                    :  <span > <i class='bx bx-edit-alt iconEdit no'> </i></span>
+                    item.status === 1 ?  <span onClick={()=>handleEdit(item.importId)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                    :  <span > <i className='bx bx-edit-alt iconEdit no'> </i></span>
                 }
                
-                <span onClick={()=>handleDetail(item.importId)}> <i class='bx bx-detail iconDelete'></i></span>
+                <span onClick={()=>handleDetail(item.importId)}> <i className='bx bx-detail iconDelete'></i></span>
             </td>
         </tr>
     )

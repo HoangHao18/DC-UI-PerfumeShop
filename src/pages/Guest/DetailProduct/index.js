@@ -51,7 +51,7 @@ export default function DetailProduct() {
     let dispatch = useDispatch();
 
     const product = useSelector((state) => state.products.productSingle);
-    console.log("product now mmmmmmmmmmm: ", product)
+
 
     //const [colorsObject, setColorsObject] = useState([]);
     //console.log("colorsObject: ", colorsObject);
@@ -180,13 +180,13 @@ export default function DetailProduct() {
 
                                 <div className="nsx-dp">
                                     Nhà sản xuất :  {productEx.manufacture.name}
-                                    {/* <i class='bx bx-chevron-down icon-read-more'></i> */}
+                                    {/* <i className='bx bx-chevron-down icon-read-more'></i> */}
                                 </div>
                                 <p className="desc-dp">
                                     <div className="desc-dp-t">Mô tả </div>
                                     {
-                                        isOpenDesc ? <i class='bx bx-chevron-up icon-read-more' onClick={() => setOpenDesc(!isOpenDesc)}></i>
-                                            : <i class='bx bx-chevron-down icon-read-more' onClick={() => setOpenDesc(!isOpenDesc)}></i>
+                                        isOpenDesc ? <i className='bx bx-chevron-up icon-read-more' onClick={() => setOpenDesc(!isOpenDesc)}></i>
+                                            : <i className='bx bx-chevron-down icon-read-more' onClick={() => setOpenDesc(!isOpenDesc)}></i>
                                     }
                                 </p>
                                 {
@@ -198,9 +198,9 @@ export default function DetailProduct() {
                                 <div className="quantity-dp">
                                     <p>Số lượng</p>
                                     <div className="quantity-btn-dp">
-                                        <span onClick={() => { setNumberUserChoosed(numberUserChoosed === 0 ? 0 : numberUserChoosed - 1) }}><i class='bx bx-minus icon-minus' ></i></span>
+                                        <span onClick={() => { setNumberUserChoosed(numberUserChoosed === 0 ? 0 : numberUserChoosed - 1) }}><i className='bx bx-minus icon-minus' ></i></span>
                                         <span className="quantity">{numberUserChoosed}</span>
-                                        <span onClick={() => { setNumberUserChoosed(numberUserChoosed == productEx.number ? numberUserChoosed : numberUserChoosed + 1) }}><i class='bx bx-plus icon-plus'></i></span>
+                                        <span onClick={() => { setNumberUserChoosed(numberUserChoosed == productEx.number ? numberUserChoosed : numberUserChoosed + 1) }}><i className='bx bx-plus icon-plus'></i></span>
                                     </div>
                                 </div>
 

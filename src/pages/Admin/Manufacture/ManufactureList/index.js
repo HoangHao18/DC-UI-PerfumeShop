@@ -17,7 +17,7 @@ export default function Manufacture(){
     const manufactureList = useSelector((state) => state.manufactures.manufactureList);
     const isLoading = useSelector(state => state.manufactures.isLoading)
     //const manufactureList = useSelector(state => state.manufactures.manufactureList);;
-    console.log("manufactureList",manufactureList,"isloading", isLoading);
+
 
     
     useEffect(() => {
@@ -60,8 +60,8 @@ export default function Manufacture(){
             <td>{item.address}</td>
             <td>{item.description}</td>
             <td>
-                <span onClick={()=>handleEdit(item.id)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                <span onClick={()=>handleDelete(item.id)}> <i class='bx bx-trash iconDelete'></i></span>
+                <span onClick={()=>handleEdit(item.id)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                <span onClick={()=>handleDelete(item.id)}> <i className='bx bx-trash iconDelete'></i></span>
             </td>
         </tr>
     )

@@ -15,7 +15,6 @@ import { useEffect } from 'react';
 import jwt_decode from "jwt-decode";
 import { loginCheckLocalAsync, logout } from '../../../redux/actions/authAction';
 
-//console.log("dday nheeeeeeeee: ",curr_user.name)
 // const renderUserToggle = (user) =>(
 //     <div className="topnav__right-user">
 //         <div className="topnav__right-user__image">
@@ -69,7 +68,6 @@ const TopNav = () => {
         Cookies.remove('X-Auth-Token')
         //dispatch(saveCartAsync({id: userCurrent.id,cart: localStorage.getItem("cart")}))
         dispatch(logout());
-        console.log("curren user nheeeeeeeeee: ",userCurrent,isLogin)
         window.location.href = "/"
 
     }

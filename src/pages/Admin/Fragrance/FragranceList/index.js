@@ -17,7 +17,7 @@ export default function Fragrance(){
     const fragranceList = useSelector((state) => state.fragrances.fragranceList);
     const isLoading = useSelector(state => state.fragrances.isLoading)
     //const fragranceList = useSelector(state => state.fragrances.fragranceList);;
-    console.log("fragranceList",fragranceList,"isloading", isLoading);
+
 
     
     useEffect(() => {
@@ -54,8 +54,8 @@ export default function Fragrance(){
             <td>{item.name}</td>
             <td>{item.description}</td>
             <td>
-                <span onClick={()=>handleEdit(item.id)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                <span onClick={()=>handleDelete(item.id)}> <i class='bx bx-trash iconDelete'></i></span>
+                <span onClick={()=>handleEdit(item.id)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                <span onClick={()=>handleDelete(item.id)}> <i className='bx bx-trash iconDelete'></i></span>
             </td>
         </tr>
     )

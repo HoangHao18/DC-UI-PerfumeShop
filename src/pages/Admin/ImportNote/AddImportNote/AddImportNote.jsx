@@ -54,19 +54,19 @@ function AddImportNote() {
     const handleDeleteProductRender = (index) => {
         const newS = selectedProducts.slice();
         newS.splice(index, 1);
-        console.log("splice:", newS)
+
         setSelectedProducts(newS);
     }
 
     const renderProducts = (source) => {
-        console.log("source size: ", source);
+
         return source.map((p, index) => {
             return (
                 <div className="size-product-item" key={index}>
                     <div>ProductID: {p.productid}</div>
                     <div>Number: <NumberFormat value={p.number} displayType={'text'} thousandSeparator={true} /></div>
                     <div>Cost: <NumberFormat value={p.cost} displayType={'text'} thousandSeparator={true} /> VND</div>
-                    <span className="icon-delete-size" onClick={() => handleDeleteProductRender(index)}> <i class='bx bx-x-circle icon-del-size'></i></span>
+                    <span className="icon-delete-size" onClick={() => handleDeleteProductRender(index)}> <i className='bx bx-x-circle icon-del-size'></i></span>
                 </div>
             )
         });
@@ -102,8 +102,8 @@ function AddImportNote() {
         if(selectedManufacture){
             dispatch(getProductByManufactureIdAsync(selectedManufacture.value));
         }
-        console.log("bbbbbbbbbbb: ",selectedManufacture)
-        console.log("ccccccccccc: ",productList)
+
+
         setSelectedProducts([]);
        
     }, [selectedManufacture]);
@@ -111,16 +111,16 @@ function AddImportNote() {
     useEffect(() => {
         if(selectedManufacture){
             productList && setProductOptions(productList.map(({ id, name, images }) => ({ value: id, label: id + " - " + name, name: name, images: images})));
-            console.log("productOptions: ", productOptions)
+
         }
-        console.log("bbbbbbbbbbb: ",selectedManufacture)
-        console.log("ccccccccccc: ",productList)
+
+
        
     }, [productList]);
 
     useEffect(() => {
         manufactureList && setManufactureOptions(manufactureList.map(({ id, name }) => ({ value: id, label: id + " - " + name })));
-        console.log("manufactureOptions: ", manufactureOptions)
+
     }, [manufactureList]);
 
 
@@ -156,7 +156,7 @@ function AddImportNote() {
     }
 
     useEffect(() => {
-        console.log("Form Data: ", formData); //note
+
         setFomValidError(checkValidateInput(formData));
         setSelectedManufacture(formData.manufacture)
     }, [formData]);
@@ -170,7 +170,7 @@ function AddImportNote() {
         if (formD.products.length <= 0) {
             err.products = "Please add product!"
         }
-        console.log("error form: ", err)
+
 
         if (err.manufacture) {
             setIsValidForm(false)
@@ -190,10 +190,10 @@ function AddImportNote() {
     const status = "oops something wrong";
     function handleSave(evt) {
         evt.preventDefault();
-        console.log("check save onclick")
+
         if (!isValidForm) return;
 
-        console.log("check valid")
+
 
         // const data = new FormData();
         // data.append("name", formData.name);
@@ -209,7 +209,7 @@ function AddImportNote() {
         //     data.append("images", fileImgPost[key])
         // }
 
-        console.log("selectedProducts: ",selectedProducts)
+
 
         const data = selectedProducts.map((item,index)=>({
             productid: item.productid,
@@ -218,7 +218,7 @@ function AddImportNote() {
         }))
         dispatch(createImportNoteAsync(data))
         .then(res => {
-            console.log("ok: ",res )
+
             if (res.ok) {
                 // Thành công
                 //console.log("errResponse",errResponse)
@@ -231,7 +231,7 @@ function AddImportNote() {
 
             } else {
                 // Thất bại
-                console.log("status",status)
+
             }
         });
     }
@@ -274,8 +274,8 @@ function AddImportNote() {
             <td><NumberFormat value={item.cost} displayType={'text'} thousandSeparator={true} /> VND</td>   
               
             <td className="icon-de">
-                {/* <span onClick={()=>handleEdit(item.importId)}> <i class='bx bx-edit-alt iconEdit'> </i></span> */}
-                <span onClick={()=>handleDeleteProductRender(index)}> <i class='bx bx-trash iconDelete '></i></span>
+                {/* <span onClick={()=>handleEdit(item.importId)}> <i className='bx bx-edit-alt iconEdit'> </i></span> */}
+                <span onClick={()=>handleDeleteProductRender(index)}> <i className='bx bx-trash iconDelete '></i></span>
             </td>
         </tr>
     )
@@ -286,7 +286,7 @@ function AddImportNote() {
         <div>
             <div className="add-product-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Add Import Note</span>
                 </h2>
                 <div>
@@ -349,7 +349,7 @@ function AddImportNote() {
                             {
                                 selectedManufacture && 
                                 <div className="col-12">
-                                <div className="add-product-buy" onClick={() => setShowAddProduct(showAddProduct => !showAddProduct)}><i class='bx bx-add-to-queue icon-add-product'></i>Add Product</div>
+                                <div className="add-product-buy" onClick={() => setShowAddProduct(showAddProduct => !showAddProduct)}><i className='bx bx-add-to-queue icon-add-product'></i>Add Product</div>
                                 {
                                     showAddProduct && (
                                         <div>
@@ -392,8 +392,8 @@ function AddImportNote() {
                             {/* <div className="icon-add-size-container" onClick={() => setShowAddProduct(showAddProduct => !showAddProduct)}>
                                 {
                                     showAddProduct ?
-                                        <span className="btn-clo-op-add-size "><i class='bx bxs-minus-circle ' ></i> Close Add Size</span> :
-                                        <span className="btn-clo-op-add-size"><i class='bx bxs-plus-circle' ></i> Add Size</span>
+                                        <span className="btn-clo-op-add-size "><i className='bx bxs-minus-circle ' ></i> Close Add Size</span> :
+                                        <span className="btn-clo-op-add-size"><i className='bx bxs-plus-circle' ></i> Add Size</span>
                                 }
                             </div> */}
                             {/* {

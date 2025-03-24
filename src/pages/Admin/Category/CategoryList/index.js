@@ -17,8 +17,7 @@ export default function Category(){
     const categoryList = useSelector((state) => state.categories.categoryList);
     const isLoading = useSelector(state => state.categories.isLoading)
     //const categoryList = useSelector(state => state.categories.categoryList);;
-    console.log("categoryList",categoryList,"isloading", isLoading);
-
+   
     
     useEffect(() => {
         dispatch(getListCategoriesAsync());
@@ -54,8 +53,8 @@ export default function Category(){
             <td>{item.name}</td>
             <td>{item.description}</td>
             <td>
-                <span onClick={()=>handleEdit(item.id)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                <span onClick={()=>handleDelete(item.id)}> <i class='bx bx-trash iconDelete'></i></span>
+                <span onClick={()=>handleEdit(item.id)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                <span onClick={()=>handleDelete(item.id)}> <i className='bx bx-trash iconDelete'></i></span>
             </td>
         </tr>
     )

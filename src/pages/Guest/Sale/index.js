@@ -12,6 +12,7 @@ import { getListCategoriesAsync } from "../../../redux/actions/categoryAction";
 import ProductItem from "../../../components/share/ProductItem";
 
 import listProductEx from '../../../assets/json/list-product-hot.json';
+import { returnUrl } from "../../../helpers";
 const categoryListEx =["Body mist", "Oil mist", "Perfumes", "Perfume oil", "Aromatherapy", "Body spray"]
 
 export  default function Sale(){
@@ -31,9 +32,9 @@ export  default function Sale(){
     //     history.push(`/detailsProduct/${idP}`)
     // }
     const [productListRender, setProductListRender] = useState(productList);
-    useEffect(() => {
-        setProductListRender(productList)
-    },[productList]);
+    // useEffect(() => {
+    //     setProductListRender(productList)
+    // },[productList]);
 
     const handleFilterProduct = (categoryId) =>{
         dispatch(getProductByCategoryIdAsync(categoryId))
@@ -58,7 +59,7 @@ export  default function Sale(){
     return(
         <div className="sale-page-container">
             <HeaderBar/>
-            <HeaderImage img= "/assets/images/HeaderImage.jpg" title="Sale"/>
+            <HeaderImage img={returnUrl("/assets/images/HeaderImage.jpg")} title="Sale"/>
             <BreakSpace h="30px"/>
             <div className="container">
                 <div className="row-hh">
@@ -80,7 +81,7 @@ export  default function Sale(){
 
                         <div className="search-product">
                             <input type="text" placeholder="Tên sản phẩm..."></input>
-                            <button><i class='bx bx-search icon-search'></i></button>
+                            <button><i className='bx bx-search icon-search'></i></button>
                         </div>  
                     </div>
                   

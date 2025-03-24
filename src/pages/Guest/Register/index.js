@@ -81,12 +81,11 @@ export default function Register(){
                 ...formData,
                 [key]: evt.target.value
             })
-            console.log("kkk: ", formData); //note
+            
         }
     }
 
     useEffect(() => {
-        console.log("kkk22: ",formData); //note
         setFomValidError(checkValidateInput(formData));
     },[formData]);
 
@@ -136,16 +135,16 @@ export default function Register(){
         if (!formD.addressNo) {
             err.addressNo = "Số nhà/thôn/xóm là bắt buộc."
         }
-        console.log("mmm",err)
+
 
          if(err.name || err.phone || err.password || err.email || err.gender || err.addressNo) {
             setIsValidForm(false)
             //err.isValidForm = false;
-            console.log("vao falsse")
+
         }else{
             setIsValidForm(true)
             //err.isValidForm = true;
-            console.log("vao true")
+
         }
       
         return err;
@@ -158,10 +157,8 @@ export default function Register(){
    
     function handleSaveUser(evt){
         evt.preventDefault();
-        console.log("check save onclick")
         if(!isValidForm) return;
-        
-        console.log("check valid")
+    
         //dispatch(createUserAsync(formData));
 
         // const data = new FormData();
@@ -209,7 +206,7 @@ export default function Register(){
      }
 
      const setAddessChoose = (data)=>{
-        console.log("cdw: ",data)
+
         setFormData({
             ...formData,
             cdw:  data.ward + ", " + data.district + ", " + data.city
@@ -311,7 +308,7 @@ export default function Register(){
                                         <label className="label" name="image">Ảnh đại diện</label>
                                         <div className="preview-img"><img src={previewImgURL} alt=""></img></div> 
                                         <input id="image" type="file" className="form-control "  hidden onChange={ (event) => handleOnChangeImage(event)}/>
-                                        <label className="form-control choose-img" htmlFor="image"><i class='bx bx-image-add icon-choose-img'></i>Chọn ảnh</label>
+                                        <label className="form-control choose-img" htmlFor="image"><i className='bx bx-image-add icon-choose-img'></i>Chọn ảnh</label>
                                                                                                               
                                     </div>
                                 </div>       */}

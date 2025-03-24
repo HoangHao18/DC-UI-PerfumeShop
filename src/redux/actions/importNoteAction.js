@@ -11,7 +11,7 @@ const getListImportNotes = (importNoteList) => ({
 export const getListImportNotesAsync = () => (dispatch) => {
         ImportNoteService.getAllImportNotes()
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getListImportNotes(response.data));
         })
         .catch((error) => {
@@ -28,7 +28,7 @@ export const createImportNoteAsync = (data) => {
     return async function(dispatch) {     
         try{
             let response = (await ImportNoteService.createImportNote(data) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(createImportNote());
@@ -43,7 +43,7 @@ export const createImportNoteAsync = (data) => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false
@@ -127,7 +127,7 @@ export const updateImportNoteStatusSuccessAsync = (id)  => {
     return async function(dispatch) {     
         try{
             let response = (await ImportNoteService.updateStatusSuccess(id));
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(updateImportNoteStatusSuccess());
@@ -162,7 +162,7 @@ export const updateImportNoteStatusDeleteAsync = (id)  => {
     return async function(dispatch) {     
         try{
             let response = (await ImportNoteService.updateStatusDelete(id));
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(updateImportNoteStatusDelete());

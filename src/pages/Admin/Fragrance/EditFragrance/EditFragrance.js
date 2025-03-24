@@ -88,14 +88,14 @@ function EditFragrance() {
 
     function handleSaveFragrance(evt) {
         evt.preventDefault();
-        console.log("check save onclick")
+
         if (!isValidForm) return;
 
-        console.log("check valid")
+
 
         dispatch(editFragranceAsync({...formData, "id": id}))
         .then(res => {
-            console.log("ok: ",res )
+
             if (res.ok) {
                 // Thành công
                 // setFormData({
@@ -105,7 +105,7 @@ function EditFragrance() {
                 
             } else {
                 // Thất bại
-                console.log("status",status)
+
             }
         });
     }
@@ -119,7 +119,7 @@ function EditFragrance() {
         <div>
             <div className="add-box-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Edit Fragrance</span>
                 </h2>
                 <div>

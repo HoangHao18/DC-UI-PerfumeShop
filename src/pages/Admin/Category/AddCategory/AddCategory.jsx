@@ -26,12 +26,10 @@ function AddCategory() {
                 ...formData,
                 [key]: evt.target.value
             })
-            //console.log("kkk: ", formData); //note
         }
     }
 
     useEffect(() => {
-        //console.log("kkk22: ", formData); //note
         setFomValidError(checkValidateInput(formData));
     }, [formData]);
 
@@ -46,16 +44,16 @@ function AddCategory() {
         if (!formD.description) {
             err.description = "Description is required."
         } 
-        //console.log("mmm", err)
+       
 
         if (err.name || err.description) {
             setIsValidForm(false)
             //err.isValidForm = false;
-            //console.log("vao falsse")
+         
         } else {
             setIsValidForm(true)
             //err.isValidForm = true;
-            //console.log("vao true")
+           
         }
 
         return err;
@@ -68,18 +66,11 @@ function AddCategory() {
     const status = "oops something wrong";
     function handleSaveUser(evt) {
         evt.preventDefault();
-        console.log("check save onclick")
-        if (!isValidForm) return;
-
-        console.log("check valid")
-        
+        if (!isValidForm) return;        
         dispatch(createCategoryAsync(formData))
         .then(res => {
-            console.log("ok: ",res )
             if (res.ok) {
                 // Thành công
-                //console.log("errResponse",errResponse)
-                //console.log("status",status)
                 setFormData({
                     name: '',
                     description: ''
@@ -87,7 +78,7 @@ function AddCategory() {
                 
             } else {
                 // Thất bại
-                console.log("status",status)
+               
             }
         });
     }
@@ -101,7 +92,7 @@ function AddCategory() {
         <div>
             <div className="add-box-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Add Catrgory</span>
                 </h2>
                 <div>

@@ -65,17 +65,17 @@ function AddProduct() {
 
     useEffect(() => {
        categoryList && setCategoryOptions(categoryList.map( ({id, name}) => ({value: id, label: name})));
-       console.log("categoryOptions: ", categoryOptions)
+
     }, [categoryList]);
 
     useEffect(() => {
         fragranceList && setFragranceOptions(fragranceList.map( ({id, name}) => ({value: id, label: name})));
-        console.log("fragranceOptions: ", fragranceOptions)
+
      }, [fragranceList]);
 
      useEffect(() => {
         manufactureList && setManufactureOptions(manufactureList.map( ({id, name}) => ({value: id, label: name})));
-        console.log("manufactureOptions: ", manufactureOptions)
+
      }, [manufactureList]);
 
     //end gett category, manufacture, fragrance >>
@@ -87,7 +87,7 @@ function AddProduct() {
     const handleDeleteImgRender = (index) => {
         const newI = urlSelectedImages.slice();
         newI.splice(index,1);
-        console.log("splice:",newI)
+
         setUrlSelectedImages(newI) ;
 
     //   console.log("fileImgPost nnnnnnnnnn",fileImgPost)
@@ -99,7 +99,7 @@ function AddProduct() {
 
         let newImgPost = {...fileImgPost};
         delete newImgPost[index]
-        console.log("splice newImgPost:",newImgPost)
+
         setFileImgPost(newImgPost) ; 
     }
 
@@ -118,19 +118,19 @@ function AddProduct() {
                 (file) => URL.revokeObjectURL(file) // avoid memory leak
             );
     
-            console.log("e.target.files: ",e.target.files)
-            console.log("Array.from(e.target.files): ", Array.from(e.target.files));
-            console.log("filesArray: ", filesArray);
+
+
+
         }
       };
     
       const renderPhotos = (source) => {
-        console.log("source: ", source);
+
         return source.map((photo, index) => {
           return (
             <div className="img-product-2" key={index}>
                 <img src={photo} alt="" key={photo} />
-                <span className="icon-delete-img-2" onClick={()=>handleDeleteImgRender(index)}> <i class='bx bx-x-circle icon-del-img'></i></span>
+                <span className="icon-delete-img-2" onClick={()=>handleDeleteImgRender(index)}> <i className='bx bx-x-circle icon-del-img'></i></span>
             </div>
             )
         });
@@ -189,7 +189,7 @@ function AddProduct() {
     }
 
     useEffect(() => {
-        console.log("Form Data: ", formData); //note
+
         setFomValidError(checkValidateInput(formData));
     }, [formData]);
 
@@ -242,10 +242,10 @@ function AddProduct() {
     const status = "oops something wrong";
     function handleSave(evt) {
         evt.preventDefault();
-        console.log("check save onclick")
+
         if (!isValidForm) return;
 
-        console.log("check valid")
+
 
         const data = new FormData();
         data.append("name", formData.name);
@@ -264,7 +264,7 @@ function AddProduct() {
         
         dispatch(createProductAsync(data))
         .then(res => {
-            console.log("ok: ",res )
+
             if (res.ok) {
                 // Thành công
                 //console.log("errResponse",errResponse)
@@ -284,7 +284,7 @@ function AddProduct() {
                 
             } else {
                 // Thất bại
-                console.log("status",status)
+
             }
         });
     }
@@ -298,7 +298,7 @@ function AddProduct() {
         <div>
             <div className="add-product-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Add Product</span>
                 </h2>
                 <div>
@@ -381,7 +381,7 @@ function AddProduct() {
                         <div className="row row-img">
                             {/* <label className="label label-images" name="image">Images</label> */}
                             <input type="file" name="images" id="images" multiple hidden onChange={handleImageChange} />
-                            <label htmlFor="images" className="label label-choose-img"><i class='bx bx-image-add icon-choose-img'></i>Add Image</label>
+                            <label htmlFor="images" className="label label-choose-img"><i className='bx bx-image-add icon-choose-img'></i>Add Image</label>
                             <div className="result">{renderPhotos(urlSelectedImages)}</div>
                             { formValidError.images &&  <label className="label-error">{formValidError.images}</label> }
                         </div>

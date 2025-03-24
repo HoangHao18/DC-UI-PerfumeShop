@@ -109,14 +109,14 @@ function EditManufacture() {
 
     function handleSave(evt) {
         evt.preventDefault();
-        console.log("check save onclick")
+
         if (!isValidForm) return;
 
-        console.log("check valid")
+
 
         dispatch(editManufactureAsync({...formData, "id": id}))
         .then(res => {
-            console.log("ok: ",res )
+
             if (res.ok) {
                 // Thành công
                 // setFormData({
@@ -126,7 +126,7 @@ function EditManufacture() {
                 
             } else {
                 // Thất bại
-                console.log("status",status)
+
             }
         });
     }
@@ -140,7 +140,7 @@ function EditManufacture() {
         <div>
             <div className="add-box-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Edit Manufacture</span>
                 </h2>
                 <div>

@@ -15,7 +15,7 @@ export default function Order(){
 
     const orderList = useSelector((state) => state.orders.orderList);
     const isLoading = useSelector(state => state.orders.isLoading)
-    console.log("orderList",orderList,"isloading", isLoading);
+
     
 
     useEffect(() => {
@@ -68,11 +68,11 @@ export default function Order(){
             <td>{item.status === 1 ? "Chưa xác nhận" : item.status === 2 ? "Đã xác nhận" : item.status === 3 ?"Đang giao": item.status === 4? "Thành công": "Đã Xóa"}</td>     
             <td>
                 {
-                    (item.status < 4  && item.status > 0)?  <span onClick={()=>handleEdit(item.idorder)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                    :  <span > <i class='bx bx-edit-alt iconEdit no'> </i></span>
+                    (item.status < 4  && item.status > 0)?  <span onClick={()=>handleEdit(item.idorder)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                    :  <span > <i className='bx bx-edit-alt iconEdit no'> </i></span>
                 }
                
-                <span onClick={()=>handleDetail(item.idorder)}> <i class='bx bx-detail iconDelete'></i></span>
+                <span onClick={()=>handleDetail(item.idorder)}> <i className='bx bx-detail iconDelete'></i></span>
             </td>
         </tr>
     )

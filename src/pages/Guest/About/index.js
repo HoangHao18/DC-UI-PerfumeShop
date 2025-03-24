@@ -1,17 +1,18 @@
 import BreakSpace from "../../../components/share/BreakSpace";
 import HeaderImage from "../../../components/share/HeaderImage";
+import { returnUrl } from "../../../helpers";
 
 import "./style.scss";
 
 export  default function About(){
     return(
         <div className="about-page-container">
-            <HeaderImage img= "/assets/images/HeaderImage.jpg" title="About"/>
+            <HeaderImage img={returnUrl("/assets/images/HeaderImage.jpg")} title="About"/>
             <BreakSpace h= "30px"/>
             <div className="container">
                 <div className="row-hh">
                     <div className="col-3 image">
-                        <img src = "/assets/images/decoPN03.png" alt=""></img>
+                        <img src={returnUrl("/assets/images/decoPN03.png")} alt=""></img>
                     </div>
                     <div className="col-9 content">
                         <h3 className="title">Our Story</h3>

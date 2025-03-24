@@ -254,8 +254,8 @@ function ImportNoteDetail() {
             <td><NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} /> VND</td>   
             <td><NumberFormat value={item.product.cost} displayType={'text'} thousandSeparator={true} /> VND</td>   
             {/* <td>
-                <span onClick={()=>handleEdit(item.importId)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                <span onClick={()=>handleDelete(item.importId)}> <i class='bx bx-trash iconDelete no'></i></span>
+                <span onClick={()=>handleEdit(item.importId)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                <span onClick={()=>handleDelete(item.importId)}> <i className='bx bx-trash iconDelete no'></i></span>
             </td> */}
         </tr>
     )
@@ -265,7 +265,7 @@ function ImportNoteDetail() {
         <div>
             <div className="import-note-detail-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>ImportNote Detail</span>
                 </h2>
                 <div>

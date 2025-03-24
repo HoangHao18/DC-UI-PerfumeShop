@@ -26,12 +26,11 @@ function EditCategory() {
                 ...formData,
                 [key]: evt.target.value
             })
-            //console.log("kkk: ", formData); //note
+            
         }
     }
 
     useEffect(() => {
-        //console.log("kkk22: ", formData); //note
         setFomValidError(checkValidateInput(formData));
     }, [formData]);
 
@@ -87,14 +86,11 @@ function EditCategory() {
 
     function handleSaveCategory(evt) {
         evt.preventDefault();
-        console.log("check save onclick")
         if (!isValidForm) return;
-
-        console.log("check valid")
 
         dispatch(editCategoryAsync({...formData, "id": id}))
         .then(res => {
-            console.log("ok: ",res )
+            
             if (res.ok) {
                 // Thành công
                 // setFormData({
@@ -104,7 +100,7 @@ function EditCategory() {
                 
             } else {
                 // Thất bại
-                console.log("status",status)
+                //console.log("status",status)
             }
         });
     }
@@ -118,7 +114,7 @@ function EditCategory() {
         <div>
             <div className="add-box-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Add Catrgory</span>
                 </h2>
                 <div>

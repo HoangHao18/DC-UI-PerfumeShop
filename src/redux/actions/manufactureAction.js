@@ -11,7 +11,7 @@ const getListManufactures = (manufactureList) => ({
 export const getListManufacturesAsync = () => (dispatch) => {
         ManufactureService.getAllManufactures()
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getListManufactures(response.data.reverse()));
         })
         .catch((error) => {
@@ -28,7 +28,7 @@ export const createManufactureAsync = ({ name, email, phone, address, descriptio
     return async function(dispatch) {     
         try{
             let response = (await ManufactureService.createManufacture({ name, email, phone, address, description }) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(createManufacture());
@@ -39,11 +39,11 @@ export const createManufactureAsync = ({ name, email, phone, address, descriptio
                 }
             }
             else{//call api not success not run in here
-                console.log("response.eror: ", response.error);
+
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false
@@ -82,13 +82,13 @@ const deleteManufacture = () => ({
 export const deleteManufactureAsync = (manufactureId) => (dispatch) => {
         ManufactureService.deleteManufacture(manufactureId)
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(deleteManufacture());
             dispatch(getListManufacturesAsync());
             toast.success("DELETE SUCCESS");
         })
         .catch((error) => {
-            console.log("error.response: ", error.response);
+
             // const errorList = Object.values(error.response.data.message);
             // errorList.map((item) => {
             //     toast.error(item);
@@ -107,7 +107,7 @@ export const editManufactureAsync = ({ id, name, email, phone, address, descript
     return async function(dispatch) {     
         try{
             let response = (await ManufactureService.editManufacture({ id, name, email, phone, address, description }) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(editManufacture());
@@ -118,11 +118,11 @@ export const editManufactureAsync = ({ id, name, email, phone, address, descript
                 }
             }
             else{//call api not success not run in here
-                console.log("response.eror: ", response.error);
+
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false

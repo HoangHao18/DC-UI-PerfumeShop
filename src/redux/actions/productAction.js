@@ -11,7 +11,7 @@ const getListProducts = (productList) => ({
 export const getListProductsAsync = () => (dispatch) => {
         ProductService.getAllProducts()
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getListProducts(response.data.reverse()));
         })
         .catch((error) => {
@@ -29,7 +29,7 @@ const getListProductsB = (productList) => ({
 export const getListProductsBAsync = () => (dispatch) => {
         ProductService.getAllProductsB()
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getListProductsB(response.data));
         })
         .catch((error) => {
@@ -48,7 +48,7 @@ const getProductByManufactureId = (productList) => ({
 export const getProductByManufactureIdAsync = (id) => (dispatch) => {
         ProductService.getProductByManufactureId(id)
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getProductByManufactureId(response.data.reverse()));
         })
         .catch((error) => {
@@ -66,7 +66,7 @@ const getProductByCategoryId = (productList) => ({
 export const getProductByCategoryIdAsync = (id) => (dispatch) => {
         ProductService.getProductByCategory(id)
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getProductByCategoryId(response.data.reverse()));
         })
         .catch((error) => {
@@ -83,7 +83,7 @@ export const createProductAsync = (data) => {
     return async function(dispatch) {     
         try{
             let response = (await ProductService.createProduct(data) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(createProduct());
@@ -94,11 +94,11 @@ export const createProductAsync = (data) => {
                 }
             }
             else{//call api not success not run in here
-                console.log("response.eror: ", response.error);
+
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false
@@ -166,13 +166,13 @@ const deleteProduct = () => ({
 export const deleteProductAsync = (manufactureId) => (dispatch) => {
         ProductService.deleteProduct(manufactureId)
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(deleteProduct());
             dispatch(getListProductsAsync());
             toast.success("DELETE SUCCESS");
         })
         .catch((error) => {
-            console.log("error.response: ", error.response);
+
             // const errorList = Object.values(error.response.data.message);
             // errorList.map((item) => {
             //     toast.error(item);
@@ -191,7 +191,7 @@ export const editProductAsync = (id,data)  => {
     return async function(dispatch) {     
         try{
             let response = (await ProductService.editProduct(id,data) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(editProduct());
@@ -202,11 +202,11 @@ export const editProductAsync = (id,data)  => {
                 }
             }
             else{//call api not success not run in here
-                console.log("response.eror: ", response.error);
+
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false

@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import jwt_decode from "jwt-decode";
 import { loginCheckLocalAsync, logout } from '../../../redux/actions/authAction';
 import { getCustomerByEmailAsyncB } from '../../../redux/actions/customerAction';
+import { returnUrl } from '../../../helpers';
 
 export default function HeaderBar(){
     const isLogin = useSelector((state) => state.auth.isLogin);
@@ -17,9 +18,6 @@ export default function HeaderBar(){
     //     image: " "
     // };
 
-    useEffect(()=>{   
-       console.log("nowwwwwwwwww: ",userCurrent)
-    },[userCurrent])
     let dispatch = useDispatch();
 
     // //kt render
@@ -43,7 +41,6 @@ export default function HeaderBar(){
         dispatch(getCustomerByEmailAsyncB(email))
         .then(res =>{
             if(res.ok == true){
-                console.log("av: ",res.customerId)
                 history.push(`/orders/${res.customerId}`);
                 
             }
@@ -56,10 +53,8 @@ export default function HeaderBar(){
         Cookies.remove('X-Auth-Token')
         //dispatch(saveCartAsync({id: userCurrent.id,cart: localStorage.getItem("cart")}))
         dispatch(logout());
-        //console.log("curren user nheeeeeeeeee: ",userCurrent,isLogin)
         window.location.href = "/"
         
-        //console.log("localStorage.getItem cart",localStorage.getItem("cart"))
         // localStorage.removeItem("userCurrentId", userCurrent.id);
         // localStorage.setItem("isLogin",false)
         // localStorage.removeItem("cart");
@@ -69,7 +64,7 @@ export default function HeaderBar(){
     return(
         <div className="header-bar row-hh">
             <div className="col-4 logo-page">
-                <span><img src="/assets/images/logoshop.png" alt=""></img></span>
+                <span><img src={returnUrl("/assets/images/logoshop.png")}  alt=""></img></span>
             </div>
 
             <div className="col-4 list-page">
@@ -84,27 +79,27 @@ export default function HeaderBar(){
 
             <div className="col-4 icon-tool-page">
                 {
-                    isLogin &&  <Link to="/cart"><span className="icon-cart-2"><i class='bx bx-shopping-bag icon-2'></i></span></Link> 
+                    isLogin &&  <Link to="/cart"><span className="icon-cart-2"><i className='bx bx-shopping-bag icon-2'></i></span></Link> 
                 }
                
 
                 {
                     isLogin && userCurrent ?
-                        <span className="icon-cart-2" onClick={()=>handleOrdersOfUser(userCurrent.email)}><i class='bx bx-detail icon-2'></i></span>
+                        <span className="icon-cart-2" onClick={()=>handleOrdersOfUser(userCurrent.email)}><i className='bx bx-detail icon-2'></i></span>
                     : ''
                 }
 
                 {
                     isLogin && userCurrent ?
                         <div className="info-user-current"> 
-                            <span className="icon-logout-2" onClick={()=>handleLogOut()}><i class='bx bx-log-out-circle icon-2' ></i></span>  
+                            <span className="icon-logout-2" onClick={()=>handleLogOut()}><i className='bx bx-log-out-circle icon-2' ></i></span>  
                             {
                                 userCurrent.image && !(userCurrent.image===" ") ? <img alt="" src = {process.env.REACT_APP_API_IMG + userCurrent.image}></img> :
                                 <img alt="" src = "/assets/images/cat.png"></img>
                             }  
                              <span className="iuc-name">{userCurrent.email}</span>
                         </div> 
-                    : <Link to="/login"><span className="icon-login-2"><i class='bx bx-log-in-circle icon-2' ></i></span></Link>
+                    : <Link to="/login"><span className="icon-login-2"><i className='bx bx-log-in-circle icon-2' ></i></span></Link>
                 } 
 
             </div> 

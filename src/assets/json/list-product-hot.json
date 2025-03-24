@@ -5,7 +5,7 @@
         "rated": "4",
         "price": "380000",
         "number": "10",
-        "id":""
+        "id":"111"
     },
     {
         "image": "/assets/images/pi-catusWater.jpg",
@@ -13,7 +13,7 @@
         "rated": "5",
         "price": "480000",
         "number": "10",
-        "id":""
+        "id":"222"
     },
     {
         "image": "/assets/images/pi-catusWater.jpg",
@@ -21,7 +21,7 @@
         "rated": "4",
         "price": "380000",
         "number": "10",
-        "id":""
+        "id":"333"
     },
     {
         "image": "/assets/images/pi-catusWater.jpg",
@@ -29,7 +29,7 @@
         "rated": "5",
         "price": "480000",
         "number": "10",
-        "id":""
+        "id":"444"
     },
     {
         "image": "/assets/images/pi-catusWater.jpg",
@@ -37,7 +37,7 @@
         "rated": "4",
         "price": "380000",
         "number": "10",
-        "id":""
+        "id":"555"
     },
     {
         "image": "/assets/images/pi-catusWater.jpg",
@@ -45,7 +45,7 @@
         "rated": "5",
         "price": "480000",
         "number": "10",
-        "id":""
+        "id":"666"
     }
 
 ]

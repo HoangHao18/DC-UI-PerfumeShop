@@ -11,7 +11,7 @@ const getListCategories = (categoryList) => ({
 export const getListCategoriesAsync = () => (dispatch) => {
         CategoryService.getAllCategories()
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getListCategories(response.data.reverse()));
         })
         .catch((error) => {
@@ -28,7 +28,7 @@ export const createCategoryAsync = ({ name, description }) => {
     return async function(dispatch) {     
         try{
             let response = (await CategoryService.createCategory({ name, description }) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(createCategory());
@@ -43,7 +43,7 @@ export const createCategoryAsync = ({ name, description }) => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false
@@ -82,13 +82,13 @@ const deleteCategory = () => ({
 export const deleteCategoryAsync = (categoryId) => (dispatch) => {
         CategoryService.deleteCategory(categoryId)
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(deleteCategory());
             dispatch(getListCategoriesAsync());
             toast.success("DELETE SUCCESS");
         })
         .catch((error) => {
-            console.log("error.response: ", error.response);
+
             // const errorList = Object.values(error.response.data.message);
             // errorList.map((item) => {
             //     toast.error(item);
@@ -107,7 +107,7 @@ export const editCategoryAsync = ({id, name, description })  => {
     return async function(dispatch) {     
         try{
             let response = (await CategoryService.editCategory({ id, name, description }) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(editCategory());
@@ -122,7 +122,7 @@ export const editCategoryAsync = ({id, name, description })  => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false

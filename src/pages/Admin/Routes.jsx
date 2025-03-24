@@ -32,11 +32,12 @@ import Order from './Order/OrderList';
 import OrderDetail from './Order/OrderDetail/OrderDetail';
 import EditOrder from './Order/EditOrder/EditOrder';
 import ReportChoose from './Report/ReportChoose';
+import { returnUrl } from '../../helpers';
 
  function Routes(){
     return(
         <Switch>
-            <Route  exact path='/' component={Home}/>
+            <Route  exact path={returnUrl("")} component={Home}/>
             {/* <Route  exact path='/admin' component={User}/>
             <Route  path='/admin/addUser' component={AddUser}/> */}
 

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux';
 import { getListFragrancesAsync } from '../../../redux/actions/fragranceAction';
 import listFragrance from '../../../assets/json/list-pragrance.json'
+import { returnUrl } from '../../../helpers';
 
 export default function HomePragrances(){
     let dispatch = useDispatch();
@@ -14,7 +15,7 @@ export default function HomePragrances(){
     const fragranceList = useSelector((state) => state.fragrances.fragranceList);
     const isLoading = useSelector(state => state.fragrances.isLoading)
     const style = {
-        backgroundImage: "url('/assets/images/hp06.jpg')"
+        backgroundImage: `url(${returnUrl('/assets/images/hp06.jpg')})`
     }
     return(
         <div className="home-pragrances-container">

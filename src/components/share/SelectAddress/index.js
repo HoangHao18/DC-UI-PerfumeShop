@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './style.scss'
 import vari from '../../../assets/scss/vari.module.scss';
 import Select from 'react-select'
+import { returnUrl } from '../../../helpers';
 
 const customStylesSelect = {
   option: (provided, state) => ({
@@ -42,7 +43,7 @@ export default function SelectAddress({
 
 
   useEffect(() => {
-    fetch('/assets/json/locations/cities.json', {
+    fetch(returnUrl('/assets/json/locations/cities.json'), {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -50,7 +51,6 @@ export default function SelectAddress({
     })
       .then(response => response.json())
       .then(cities => {
-        console.log(cities)
         setCityList(cities.map(({ id, name }) => ({ value: id, label: name })))
 
       })
@@ -58,7 +58,7 @@ export default function SelectAddress({
 
   useEffect(() => {
     if (!cityChoose) return;
-    fetch(`/assets/json/locations/districts/${cityChoose.value}.json`, {
+    fetch(returnUrl(`/assets/json/locations/districts/${cityChoose.value}.json`), {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -66,7 +66,6 @@ export default function SelectAddress({
     })
       .then(response => response.json())
       .then(districts => {
-        //console.log(districts)
         setDistrictList(districts.data.map(({ id, name }) => ({ value: id, label: name })))
 
       })
@@ -74,7 +73,7 @@ export default function SelectAddress({
 
   useEffect(() => {
     if (!districtChoose) return;
-    fetch(`/assets/json/locations/wards/${districtChoose.value}.json`, {
+    fetch(returnUrl(`/assets/json/locations/wards/${districtChoose.value}.json`), {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -82,7 +81,6 @@ export default function SelectAddress({
     })
       .then(response => response.json())
       .then(wards => {
-        //console.log(wards)
         setWardList(wards.data.map(({ id, name }) => ({ value: id, label: name })))
       })
   }, [districtChoose]);
@@ -93,7 +91,6 @@ export default function SelectAddress({
     //   "district": districtChoose,
     //   "ward": wardChoose,
     // }
-    // console.log(addressChoose)
     if(cityChoose && districtChoose && wardChoose){
       getAddressChoose({
         city: cityChoose.label,

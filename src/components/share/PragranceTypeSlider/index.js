@@ -28,7 +28,6 @@ export default function PragranceTypeSlider({isLoading, listP = [...pragrance_li
     const [isLoadingRender, setIsLoadingRender] =useState(isLoading)   
     useEffect(()=>{
         setPragranceListRender(listP)
-        //console.log("productListRender: ", productListRender)
     },[listP])
 
     useEffect(()=>{

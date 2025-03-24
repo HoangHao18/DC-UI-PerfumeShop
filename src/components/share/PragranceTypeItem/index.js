@@ -1,3 +1,4 @@
+import { returnUrl } from '../../../helpers';
 import './style.scss';
 
 export default function PragranceTypeItem({
@@ -9,7 +10,7 @@ export default function PragranceTypeItem({
         <div className="pragrance-type-item-container">
             <div className="pti-title-first">
                 <div className="pti-background">
-                    <img src={img} alt=""></img>
+                    <img src={returnUrl(img)} alt=""></img>
                 </div>
                 <div className="pti-title">{name}</div>
             </div>

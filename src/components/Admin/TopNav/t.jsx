@@ -7,7 +7,6 @@ import user_image from '../../../assets/Admin/images/cat.png'
 import user_menu from '../../../assets/Admin/JsonData/user_menus.json'
 import { Link } from 'react-router-dom'
 
-//console.log("dday ne nheeeeeeeee: ",curr_user.name)
 const renderUserToggle = (user) =>(
     <div className="topnav__right-user">
         <div className="topnav__right-user__image">

@@ -1,10 +1,11 @@
+import { returnUrl } from '../../../helpers'
 import './style.scss'
 
 export default function BlogBox(){
     return(
         <div className="blog-box">
             <div className="bb-image">
-                <img src="/assets/images/decoPN03.png" alt=""></img>  
+                <img src={returnUrl("/assets/images/decoPN03.png")} alt=""></img>  
             </div>
             <div className="bb-info">
                 <a className="bb-title" href="/">Basic Elements of Bottle Design</a>

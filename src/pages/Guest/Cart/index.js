@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import NumberFormat from 'react-number-format';
 import { addProductCartAsync, deleteProductCartAsync, editNumberProductCartAsync, getCartAsync } from '../../../redux/actions/cartAction';
 import { useDispatch, useSelector } from 'react-redux';
+import { returnUrl } from '../../../helpers';
 
 export  default function Cart(){
     // let listProductCart = JSON.parse(localStorage.getItem("cart"));
@@ -21,7 +22,7 @@ export  default function Cart(){
             list.map(function(item,index){
                 t = t + item.product.price*item.number
            })
-           console.log(t)
+
         }
         return t;
     }
@@ -63,7 +64,7 @@ export  default function Cart(){
         listProductCart && listProductCart.length > 0 ?
         <div className="cart-container">
             <HeaderBar/>
-            <HeaderImage img= "/assets/images/HeaderImage.jpg" title="Cart"/>
+            <HeaderImage img={returnUrl("/assets/images/HeaderImage.jpg")} title="Cart"/>
             <BreakSpace h= "30px"/>
             <div className="container">
                 <div className="row-hh title-col">

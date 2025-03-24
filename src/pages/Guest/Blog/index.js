@@ -2,13 +2,14 @@ import BreakSpace from "../../../components/share/BreakSpace";
 import BlogBox from "../../../components/share/BlogBox";
 import HeaderBar from "../../../components/Guest/HeaderBar";
 import HeaderImage from "../../../components/share/HeaderImage";
+import { returnUrl } from "../../../helpers";
 
 
 export default function Blog(){
     return(
         <div className="blog-page-container">
             <HeaderBar/>
-            <HeaderImage img= "/assets/images/HeaderImage.jpg" title="Blog"/>
+            <HeaderImage img={returnUrl("/assets/images/HeaderImage.jpg")} title="Blog"/>
             <BreakSpace h="30px"/>
             <div className="container">
                 <div className="row-hh">

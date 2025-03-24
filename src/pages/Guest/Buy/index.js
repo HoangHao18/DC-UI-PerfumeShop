@@ -14,6 +14,7 @@ import { createOrderAsync } from "../../../redux/actions/orderAction";
 import PayPal from "./paypal";
 //import ItemProductBuy from "../../components/ItemProductBuy";
 import "./style.scss";
+import { returnUrl } from '../../../helpers';
 
 
 
@@ -143,11 +144,11 @@ export default function Buy() {
 
         if (err.name || err.phone || err.address) {
             setIsValidForm(false)
-            console.log("vao falsse")
+
         } else {
             setIsValidForm(true)
             //err.isValidForm = true;
-            console.log("vao true")
+
         }
 
         return err;
@@ -159,12 +160,12 @@ export default function Buy() {
     const handleDatHangOnline = () => {
 
 
-        console.log("check save onclick")
+
         if (!isValidForm) return;
 
-        console.log("check valid true")
+
         // console.log("product choose: ", listProductCart);
-        console.log("formData: ", formData);
+
 
         setShowPaypal(!showPaypal);
         // dispatch(createOrderAsync({
@@ -193,12 +194,12 @@ export default function Buy() {
     }
 
     const handleDatHangOffline = () => {
-        console.log("check save onclick")
+
         if (!isValidForm) return;
 
-        console.log("check valid true")
+
         // console.log("product choose: ", listProductCart);
-        console.log("formData: ", formData);
+
 
         dispatch(createOrderAsync({
             nameCustomer: formData.name,
@@ -216,7 +217,7 @@ export default function Buy() {
     return (
         <div className="buy-container">
             <HeaderBar />
-            <HeaderImage img="/assets/images/HeaderImage.jpg" title="Buy" />
+            <HeaderImage img={returnUrl("/assets/images/HeaderImage.jpg")} title="Buy" />
             <BreakSpace h="30px" />
             <div className="row-hh wrap">
                 <div className="container-left col-7">

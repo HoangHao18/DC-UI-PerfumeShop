@@ -19,11 +19,11 @@ export default function StarRating(){
                             />
                             {
                                 ratingValue <= (hover || rating) ? 
-                                <i class='bx bxs-star star-icon' style={{"color": `${vari.starRatingFilled}`}}
+                                <i className='bx bxs-star star-icon' style={{"color": `${vari.starRatingFilled}`}}
                                     onMouseEnter={()=>setHover(ratingValue)}
                                     onMouseLeave={()=>setHover(null)}
                                 ></i> :
-                                <i class='bx bxs-star star-icon' style={{"color": `${vari.starRatingUnfilled}`}}
+                                <i className='bx bxs-star star-icon' style={{"color": `${vari.starRatingUnfilled}`}}
                                     onMouseEnter={()=>setHover(ratingValue)}
                                     onMouseLeave={()=>setHover(null)}
                                 ></i>

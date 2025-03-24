@@ -36,7 +36,7 @@ export default function ProductItemBuy({
                 </div>
 
                 {/* <div className="col-1 button-col">
-                    <span><i class='bx bx-trash icon-delete'></i></span>
+                    <span><i className='bx bx-trash icon-delete'></i></span>
                 </div> */}
             </div>
         </div>

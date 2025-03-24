@@ -28,10 +28,9 @@ const settings = {
 export default function ProductItemsSlider({isLoading, productList = [...product_list_ex]}) {
     const [productListRender, setProductListRender] = useState(productList);
     const [isLoadingRender, setIsLoadingRender] =useState (isLoading)   
-    useEffect(()=>{
-        setProductListRender(productList)
-        //console.log("productListRender: ", productListRender)
-    },[productList])
+    // useEffect(()=>{
+    //     setProductListRender(productList)
+    // },[productList])
 
     useEffect(()=>{
         setIsLoadingRender(isLoading)

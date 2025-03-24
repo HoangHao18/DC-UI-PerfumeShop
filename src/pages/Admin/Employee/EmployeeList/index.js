@@ -17,7 +17,7 @@ export default function Employee(){
 
     const employeeList = useSelector((state) => state.employees.employeeList);
     const isLoading = useSelector(state => state.employees.isLoading)
-    console.log("employeeList",employeeList,"isloading", isLoading);
+
     
 
     useEffect(() => {
@@ -72,8 +72,8 @@ export default function Employee(){
             <td>{item.address}</td>
             <td>{item.account.role.name}</td>
             <td>
-                <span onClick={()=>handleEdit(item.id)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                <span onClick={()=>handleDelete(item.id)}> <i class='bx bx-trash iconDelete no'></i></span>
+                <span onClick={()=>handleEdit(item.id)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                <span onClick={()=>handleDelete(item.id)}> <i className='bx bx-trash iconDelete no'></i></span>
             </td>
         </tr>
     )

@@ -21,8 +21,8 @@ export const loginAsync = (data) => {
     return async function(dispatch) {     
         try{
             let response = (await AuthService.login(data) );
-            console.log("respon Login :",response)
-            console.log("response.data.data Login :",response.data)
+
+
             if(response.status === 200){
                 dispatch(login(response.data));
                 dispatch(actSetToken(response.data.token))
@@ -41,7 +41,7 @@ export const loginAsync = (data) => {
                 }
             }
             else{//call api not success not run in here
-                console.log("response.eror: ", response);
+
                 // toast.success(response.error);
             } 
         }catch(error){
@@ -70,7 +70,7 @@ export const registerAsync = (data) => {
     return async function(dispatch) {     
         try{
             let response = (await AuthService.register(data) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(register());
@@ -85,7 +85,7 @@ export const registerAsync = (data) => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false
@@ -131,8 +131,8 @@ export const loginCheckLocalAsync = () => {
         try{
             let response = (await AuthService.findAccountByEmal(decoded.sub));
             //dispatch(loginCheckLocal())
-            console.log("response : xx",response)
-            console.log("response.data : xx",response.data)
+
+
             if(response.status === 200){
                 const curr = {
                     token: Cookies.get('X-Auth-Token'),
@@ -152,7 +152,7 @@ export const loginCheckLocalAsync = () => {
                 // toast.success(response.error);
             } 
         }catch(error){
-            console.log("error.response: xx", error.response);
+
             // const errorList = Object.values(error.response.data.message);
             // if(errorList.length > 0){
             //     errorList.map((item) => {

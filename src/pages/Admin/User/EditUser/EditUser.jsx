@@ -75,12 +75,12 @@ function EditUser() {
                 ...formData,
                 [key]: evt.target.value
             })
-            console.log("kkk: ", formData); //note
+
         }
     }
 
     useEffect(() => {
-        console.log("kkk22: ", formData); //note
+
         setFomValidError(checkValidateInput(formData));
     }, [formData]);
 
@@ -128,16 +128,16 @@ function EditUser() {
         if (!formD.address) {
             err.address = "Address is required."
         }
-        console.log("mmm", err)
+
 
         if (err.name || err.phone || err.password || err.email || err.address) {
             setIsValidForm(false)
             //err.isValidForm = false;
-            console.log("vao falsse")
+
         } else {
             setIsValidForm(true)
             //err.isValidForm = true;
-            console.log("vao true")
+
         }
 
         return err;
@@ -150,10 +150,10 @@ function EditUser() {
     //const status = "oops something wrong";
     function handleSaveUser(evt) {
         evt.preventDefault();
-        console.log("check save onclick")
+
         if (!isValidForm) return;
 
-        console.log("check valid")
+
         //dispatch(createUserAsync(formData));
 
         const data = new FormData();
@@ -205,7 +205,7 @@ function EditUser() {
         <div>
             <div className="add-box-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Add user</span>
                 </h2>
                 <div>
@@ -368,7 +368,7 @@ function EditUser() {
                                     <label className="label" name="image">Ảnh đại diện</label>
                                     <div className="preview-img"><img src={previewImgURL} alt=""></img></div>
                                     <input id="image" type="file" className="form-control " hidden onChange={(event) => handleOnChangeImage(event)} />
-                                    <label className="form-control choose-img" htmlFor="image"><i class='bx bx-image-add icon-choose-img'></i>Chọn ảnh</label>
+                                    <label className="form-control choose-img" htmlFor="image"><i className='bx bx-image-add icon-choose-img'></i>Chọn ảnh</label>
 
                                 </div>
                             </div>

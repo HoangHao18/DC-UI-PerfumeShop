@@ -13,7 +13,7 @@ const ToolTable = ({linkAdd}) => {
 
             <div className="tooltable_right">
                 <button className="add-row" onClick={()=> history.push(linkAdd)}>
-                    <span><i class='bx bx-plus icon-add'></i> </span>
+                    <span><i className='bx bx-plus icon-add'></i> </span>
                     <span>Add new</span>
                 </button>
             </div>

@@ -69,14 +69,14 @@ function AddFragrance() {
     const status = "oops something wrong";
     function handleSave(evt) {
         evt.preventDefault();
-        console.log("check save onclick")
+
         if (!isValidForm) return;
 
-        console.log("check valid")
+
         
         dispatch(createFragranceAsync(formData))
         .then(res => {
-            console.log("ok: ",res )
+
             if (res.ok) {
                 // Thành công
                 //console.log("errResponse",errResponse)
@@ -88,7 +88,7 @@ function AddFragrance() {
                 
             } else {
                 // Thất bại
-                console.log("status",status)
+
             }
         });
     }
@@ -102,7 +102,7 @@ function AddFragrance() {
         <div>
             <div className="add-box-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Add Fragrance</span>
                 </h2>
                 <div>

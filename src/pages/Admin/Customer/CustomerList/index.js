@@ -17,7 +17,7 @@ export default function Customer(){
 
     const customerList = useSelector((state) => state.customers.customerList);
     const isLoading = useSelector(state => state.customers.isLoading)
-    console.log("customerList",customerList,"isloading", isLoading);
+
     
 
     useEffect(() => {
@@ -71,8 +71,8 @@ export default function Customer(){
             <td>{item.address}</td>
             <td>{item.account.role.name}</td>
             {/* <td>
-                <span onClick={()=>handleEdit(item.id)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                <span onClick={()=>handleDelete(item.id)}> <i class='bx bx-trash iconDelete no'></i></span>
+                <span onClick={()=>handleEdit(item.id)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                <span onClick={()=>handleDelete(item.id)}> <i className='bx bx-trash iconDelete no'></i></span>
             </td> */}
         </tr>
     )

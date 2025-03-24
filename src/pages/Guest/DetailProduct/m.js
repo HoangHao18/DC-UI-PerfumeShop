@@ -19,10 +19,10 @@ export default function DetailsProduct(){
     }, []);
 
     const product = useSelector((state) => state.products.productSingle);
-    console.log("product now mmmmmmmmmmm: ",product)
+
 
     const [colorsObject, setColorsObject] = useState(product ? JSON.parse(product.colors) : [])
-    console.log("colorsObject: ", colorsObject);
+
     const [colorUserChoosed, setColorUserChoosed] = useState(colorsObject[0]);
     const [sizeUserChoosed, setSizeUserChoosed] = useState(colorUserChoosed && colorUserChoosed.length > 0 ? colorUserChoosed.sizes[0] : {})
     const [numberUserChoosed, setNumberUserChoosed] = useState(1);
@@ -47,7 +47,7 @@ export default function DetailsProduct(){
 
     const handleAddCart = ()=>{
        
-        console.log("user choose: ", colorUserChoosed, sizeUserChoosed)
+
     }
 
     return(
@@ -100,21 +100,21 @@ export default function DetailsProduct(){
                         <div className="quantity-dp">
                             <p>Số lượng</p>
                             <div className="quantity-btn-dp">
-                                <span onClick={()=>{setNumberUserChoosed( numberUserChoosed === 1 ? 1 : numberUserChoosed - 1)}}><i class='bx bx-minus icon-minus' ></i></span>
+                                <span onClick={()=>{setNumberUserChoosed( numberUserChoosed === 1 ? 1 : numberUserChoosed - 1)}}><i className='bx bx-minus icon-minus' ></i></span>
                                 <span className="quantity">{numberUserChoosed}</span>
-                                <span onClick={()=>{setNumberUserChoosed(numberUserChoosed + 1)}}><i class='bx bx-plus icon-plus'></i></span>
+                                <span onClick={()=>{setNumberUserChoosed(numberUserChoosed + 1)}}><i className='bx bx-plus icon-plus'></i></span>
                             </div>
                         </div>
                         
                         <div className="nsx-dp">
                             Nhà sản xuất :  {product.manufacture}
-                            <i class='bx bx-chevron-down icon-read-more'></i>
+                            <i className='bx bx-chevron-down icon-read-more'></i>
                         </div>
                         <p className="desc-dp">
                             <div className="desc-dp-t">Mô tả </div>
                             {
-                                isOpenDesc ? <i class='bx bx-chevron-up icon-read-more' onClick={()=>setOpenDesc(!isOpenDesc)}></i>
-                                : <i class='bx bx-chevron-down icon-read-more' onClick={()=>setOpenDesc(!isOpenDesc)}></i>
+                                isOpenDesc ? <i className='bx bx-chevron-up icon-read-more' onClick={()=>setOpenDesc(!isOpenDesc)}></i>
+                                : <i className='bx bx-chevron-down icon-read-more' onClick={()=>setOpenDesc(!isOpenDesc)}></i>
                             }
                             
                         </p>

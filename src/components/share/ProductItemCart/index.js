@@ -39,9 +39,9 @@
 
 //                 <div className="col-2 quantity-col">
 //                     <h3 className="quantityy">
-//                         <span><i class='bx bx-minus icon-minus' onClick={()=>{setQuantityProductCart( quantityProductCart === 1 ? 1 : quantityProductCart - 1)}}></i></span>
+//                         <span><i className='bx bx-minus icon-minus' onClick={()=>{setQuantityProductCart( quantityProductCart === 1 ? 1 : quantityProductCart - 1)}}></i></span>
 //                         <span className="quantity">{quantityProductCart}</span>
-//                         <span><i class='bx bx-plus icon-plus' onClick={()=>{setQuantityProductCart(quantityProductCart + 1)}}></i></span>
+//                         <span><i className='bx bx-plus icon-plus' onClick={()=>{setQuantityProductCart(quantityProductCart + 1)}}></i></span>
 //                     </h3>
 //                 </div>
 
@@ -50,7 +50,7 @@
 //                 </div>
 
 //                 <div className="col-1 button-col">
-//                     <span><i class='bx bx-trash icon-delete'></i></span>
+//                     <span><i className='bx bx-trash icon-delete'></i></span>
 //                 </div>
 //             </div>
 //         </div>
@@ -95,9 +95,9 @@ export default function ProductItemCart({productCart, handleDeleteProductCart, h
 
                 <div className="col-2 quantity-col">
                     <h3 className="quantityy">
-                        <span><i class='bx bx-minus icon-minus' onClick={()=>{setQuantityProductCart( quantityProductCart === 1 ? 1 : quantityProductCart - 1);handleAddNumberProductCart(productCart.id.productid, (quantityProductCart === 1 ? 1 : quantityProductCart - 1))}}></i></span>
+                        <span><i className='bx bx-minus icon-minus' onClick={()=>{setQuantityProductCart( quantityProductCart === 1 ? 1 : quantityProductCart - 1);handleAddNumberProductCart(productCart.id.productid, (quantityProductCart === 1 ? 1 : quantityProductCart - 1))}}></i></span>
                         <span className="quantity">{quantityProductCart}</span>
-                        <span><i class='bx bx-plus icon-plus' onClick={()=>{setQuantityProductCart(quantityProductCart == productCart.product.number ? quantityProductCart : quantityProductCart + 1); handleAddNumberProductCart(productCart.id.productid,(quantityProductCart == productCart.product.number ? quantityProductCart : quantityProductCart + 1))}}></i></span>
+                        <span><i className='bx bx-plus icon-plus' onClick={()=>{setQuantityProductCart(quantityProductCart == productCart.product.number ? quantityProductCart : quantityProductCart + 1); handleAddNumberProductCart(productCart.id.productid,(quantityProductCart == productCart.product.number ? quantityProductCart : quantityProductCart + 1))}}></i></span>
                     </h3>
                 </div>
 
@@ -106,7 +106,7 @@ export default function ProductItemCart({productCart, handleDeleteProductCart, h
                 </div>
 
                 <div className="col-1 button-col">
-                    <span><i class='bx bx-trash icon-delete' onClick={()=>handleDeleteProductCart(productCart.id.productid)}></i></span>
+                    <span><i className='bx bx-trash icon-delete' onClick={()=>handleDeleteProductCart(productCart.id.productid)}></i></span>
                 </div>
             </div>
         </div>

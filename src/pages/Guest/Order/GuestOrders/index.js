@@ -31,7 +31,7 @@ export default function GuestOrders(){
                     <div className="col-2 item-ogit"><NumberFormat value={item.totalprice}  displayType={'text'} thousandSeparator={true} /> VND</div>
                     <div className="col-2 item-ogit"><span className="">{item.ispaid === 1 ? "Đã thanh toán" : "Chưa thanh toán"}</span></div>
                     <div className="col-2 item-ogit"><span className="done">{item.status === 1 ? "Chưa xác nhận" : item.status === 2 ? "Đã xác nhận" : item.status === 3 ?"Đang giao": item.status === 4? "Thành công": "Đã Xóa"}</span></div>
-                    <div className="col-1 item-ogit last" onClick={()=>handleEdit(item.idorder)}><span><i class='bx bx-link-external iconEdit'></i></span></div>   
+                    <div className="col-1 item-ogit last" onClick={()=>handleEdit(item.idorder)}><span><i className='bx bx-link-external iconEdit'></i></span></div>   
                        
                 </div>
             </div>
@@ -40,7 +40,7 @@ export default function GuestOrders(){
 
     let history = useHistory();
     const handleEdit = (id) => {
-        console.log("id:  : ",id)
+
         history.push(`/orders-/${id}`);
     }
 
@@ -65,7 +65,7 @@ export default function GuestOrders(){
                 <div className="col-2">TT Thanh toán</div>
                 <div className="col-2">Trạng Thái</div>
                 <div className="col-1"></div>
-                {/* <div className="col" onClick={()=>handleEdit(item._id)}><span><i class='bx bx-edit-alt iconEdit'> </i></span></div>            */}
+                {/* <div className="col" onClick={()=>handleEdit(item._id)}><span><i className='bx bx-edit-alt iconEdit'> </i></span></div>            */}
             </div>
 
             <div className="orders-list-container">

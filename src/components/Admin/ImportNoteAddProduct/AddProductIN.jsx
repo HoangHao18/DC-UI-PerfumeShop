@@ -59,12 +59,11 @@ export default function AddProductIN({ handleCancelOnclick, addProductOnclick, p
                 ...formData,
                 [key]: evt.target.value
             })
-            console.log("kkk: ", formData); //note
+           
         }
     }
 
     useEffect(() => {
-        console.log("kkk22: ", formData); //note
         setFomValidError(checkValidateInput(formData));
     }, [formData]);
 
@@ -79,15 +78,14 @@ export default function AddProductIN({ handleCancelOnclick, addProductOnclick, p
         if (!formD.cost || formD.cost < 0) {
             err.cost = "Cost >= 0."
         }
-        console.log("error form: ", err)
-
+       
         if (err.productid || err.number || err.cost) {
             setIsValidForm(false)
-            console.log("vao falsse")
+           
         } else {
             setIsValidForm(true)
             //err.isValidForm = true;
-            console.log("vao true")
+          
         }
 
         return err;
@@ -95,10 +93,7 @@ export default function AddProductIN({ handleCancelOnclick, addProductOnclick, p
 
     function handleSave() {
         //evt.preventDefault();
-        console.log("check save onclick")
         if (!isValidForm) return;
-
-        console.log("check valid nnnnn", formData)
         //dispatch(createCategoryAsync(formData));
         addProductOnclick({...formData, productid: formData.productid.value, name: formData.productid.name,  images: formData.productid.images});
         handleCancelOnclick(false)
@@ -154,11 +149,11 @@ export default function AddProductIN({ handleCancelOnclick, addProductOnclick, p
                 </div>
 
                 {/* <div className="form-group-asf btn-add-size">
-                    <span className="btn-asf " onClick={() =>handleSave()}><i class='bx bxs-plus-circle btn-add-size'></i></span> 
+                    <span className="btn-asf " onClick={() =>handleSave()}><i className='bx bxs-plus-circle btn-add-size'></i></span> 
                 </div> */}
                 <div className="form-group-acf-btn">
-                    <span className="btn-acf " onClick={() => handleSave()}><i class='bx bxs-check-circle btn-add-size'></i></span>
-                    <span className="btn-acf " onClick={() => handleCancelOnclick(false)}><i class='bx bxs-x-circle btn-x-add-size'></i></span>
+                    <span className="btn-acf " onClick={() => handleSave()}><i className='bx bxs-check-circle btn-add-size'></i></span>
+                    <span className="btn-acf " onClick={() => handleCancelOnclick(false)}><i className='bx bxs-x-circle btn-x-add-size'></i></span>
                 </div>
             </form>
         </div>

@@ -32,38 +32,37 @@ import Cart from './pages/Guest/Cart';
 import Buy from './pages/Guest/Buy';
 import GuestOrders from './pages/Guest/Order/GuestOrders';
 import GuestOrderDetail from './pages/Guest/Order/GuestOrderDetail/GuestOrderDetail';
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 
 import Cookies from 'js-cookie';
 import { useEffect } from 'react';
-import jwt_decode from "jwt-decode";
-import { loginCheckLocalAsync } from './redux/actions/authAction';
+//import jwt_decode from "jwt-decode";
+//import { loginCheckLocalAsync } from './redux/actions/authAction';
 
 function App() {
+  const basename = process.env.REACT_APP_BASENAME || "/";
+
   const isLogin = useSelector((state) => state.auth.isLogin);
   const userCurrent = useSelector(state => state.auth.currentUser); 
-  let dispatch = useDispatch();
+  //let dispatch = useDispatch();
   useEffect(()=>{   
       if(Cookies.get('X-Auth-Token')){
-          const decoded = jwt_decode(Cookies.get('X-Auth-Token'));
-          dispatch(loginCheckLocalAsync())
+          //const decoded = jwt_decode(Cookies.get('X-Auth-Token'));
+          //dispatch(loginCheckLocalAsync())
           //dispatch(loginCheckLocalAsync(localStorage.getItem("userCurrentId")))
       }
   },[])
 
-  useEffect(()=>{   
-   console.log("userCurrent",userCurrent)
-},[userCurrent])
 
   return (
-    <Router>
+    <Router basename={basename}>
         <Switch>
-            {
+            {/* {
               userCurrent ?
-              (userCurrent.roles[0] == "Admin" || userCurrent.roles[0] == "Saler") && isLogin == true ?
+              (userCurrent.roles[0] === "Admin" || userCurrent.roles[0] === "Saler") && isLogin === true ?
               <Route path="/admin" component={AdminHome}/> : ''
               : ''
-            }
+            } */}
             {/* <Route path="/admin" component={AdminHome}/> */}
 
             <div className="App">

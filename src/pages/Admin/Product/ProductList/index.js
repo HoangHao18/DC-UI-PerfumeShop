@@ -69,8 +69,8 @@ export default function Product(){
                 </div>
             </td>
             <td>
-                <span className="nnnn" onClick={()=>handleEdit(item.id)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                {/* <span onClick={()=>handleDelete(item.id)}> <i class='bx bx-trash iconDelete'></i></span> */}
+                <span className="nnnn" onClick={()=>handleEdit(item.id)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                {/* <span onClick={()=>handleDelete(item.id)}> <i className='bx bx-trash iconDelete'></i></span> */}
             </td>
         </tr>
     )

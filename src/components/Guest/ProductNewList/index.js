@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux';
 
 import listProductEx from '../../../assets/json/list-product-hot.json'
+import { returnUrl } from '../../../helpers';
 
 export default function ProductNewList(){
     let dispatch = useDispatch();
@@ -37,7 +38,7 @@ export default function ProductNewList(){
                     </div>
                     <div className="pnl-deco col-4">
                         <div className="pnl-deco-img">
-                            <img src="/assets/images/decoPN.jpg" alt=""></img>
+                            <img src={returnUrl("/assets/images/decoPN.jpg")} alt=""></img>
                         </div>
                     </div>
 

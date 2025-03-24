@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 import LogResBgPage from '../../../components/share/LogResBgPage';
 
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { loginAsync } from '../../../redux/actions/authAction';
-import { useCookies } from 'react-cookie';
-import jwt_decode from "jwt-decode";
+// import { useDispatch } from 'react-redux';
+// import { useHistory } from 'react-router-dom';
+// import { loginAsync } from '../../../redux/actions/authAction';
+// import { useCookies } from 'react-cookie';
+//import jwt_decode from "jwt-decode";
 import { toast } from 'react-toastify';
 
 export default function Login(){
 
-    const [ClientId,    setClientId]    = useCookies(['Client']);
-    const [AccessToken, setAccessToken] = useCookies(['X-Auth-Token']);
-    const [UserId,      setUserId]      = useCookies(['UserId']);
+    // const [ClientId,    setClientId]    = useCookies(['Client']);
+    // const [AccessToken, setAccessToken] = useCookies(['X-Auth-Token']);
+    // const [UserId,      setUserId]      = useCookies(['UserId']);
 
-    const history = useHistory();
+    // const history = useHistory();
     //const userCurrent = useSelector((state) => state.auth.userCurrent);
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -36,7 +36,6 @@ export default function Login(){
 
     function handleSubmit(evt){
         evt.preventDefault();
-        console.log("mmmm")
         if(!formData.email || !formData.password){
             return
         }

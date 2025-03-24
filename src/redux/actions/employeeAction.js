@@ -11,7 +11,7 @@ const getListEmployees = (employeesList) => ({
 export const getListEmployeesAsync = () => (dispatch) => {
         EmployeeService.getAllEmployees()
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getListEmployees(response.data.reverse()));
         })
         .catch((error) => {
@@ -28,7 +28,7 @@ export const createEmployeeAsync = (data) => {
     return async function(dispatch) {     
         try{
             let response = (await EmployeeService.createEmployee(data) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(createEmployee());
@@ -43,7 +43,7 @@ export const createEmployeeAsync = (data) => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false
@@ -107,7 +107,7 @@ export const editEmployeeAsync = (data)  => {
     return async function(dispatch) {     
         try{
             let response = (await EmployeeService.editEmployee(data) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(editEmployee());
@@ -122,7 +122,7 @@ export const editEmployeeAsync = (data)  => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false
@@ -140,7 +140,7 @@ export const editRoleEmployeeAsync = (data)  => {
     return async function(dispatch) {     
         try{
             let response = (await EmployeeService.editRoleEmployee(data) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(editEmployee());
@@ -155,7 +155,7 @@ export const editRoleEmployeeAsync = (data)  => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false

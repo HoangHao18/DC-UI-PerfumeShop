@@ -3,12 +3,13 @@ import BreakSpace from "../../../components/share/BreakSpace";
 import HeaderBar from "../../../components/Guest/HeaderBar";
 import HeaderImage from "../../../components/share/HeaderImage";
 import Button01 from "../../../components/share/Button01";
+import { returnUrl } from "../../../helpers";
 
 export  default function Contact(){
     return(
         <div className="contact-page-container">
             <HeaderBar/>
-            <HeaderImage img= "/assets/images/HeaderImage.jpg" title="Contact"/>
+            <HeaderImage img={returnUrl("/assets/images/HeaderImage.jpg")} title="Contact"/>
             <BreakSpace h="30px"/>
             <div className="container">
                 <div className="row-hh">

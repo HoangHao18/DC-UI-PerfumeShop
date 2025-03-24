@@ -134,7 +134,7 @@ function EditOrder() {
     function step2Validator() {
         // return a boolean
         //setStatusNow(2)
-        console.log("step2Validator")
+
         dispatch(updateOrderStatusAsync(id,2))
         .then(res => {
             // console.log("ok: ",res.ok )
@@ -152,7 +152,7 @@ function EditOrder() {
     function step3Validator() {
         // return a boolean
         //setStatusNow(3)
-        console.log("step3Validator")
+
         dispatch(updateOrderStatusAsync(id,3))
         .then(res => {
             // console.log("ok: ",res.ok )
@@ -169,7 +169,7 @@ function EditOrder() {
     function step4Validator() {
         // return a boolean
         //setStatusNow(4)
-        console.log("step4Validator")
+
         dispatch(updateOrderStatusAsync(id,4))
         .then(res => {
             // console.log("ok: ",res.ok )
@@ -204,7 +204,7 @@ function EditOrder() {
         // handle the submit logic here
         // This function will be executed at the last step
         // when the submit button (next button in the previous steps) is pressed4
-        console.log("onFormSubmit")
+
 
     }
 
@@ -311,8 +311,8 @@ function EditOrder() {
             <td><NumberFormat value={item.price} displayType={'text'} thousandSeparator={true} /> VND</td>
             <td><NumberFormat value={item.product.cost} displayType={'text'} thousandSeparator={true} /> VND</td>
             {/* <td>
-                <span onClick={()=>handleEdit(item.importId)}> <i class='bx bx-edit-alt iconEdit'> </i></span>
-                <span onClick={()=>handleDelete(item.importId)}> <i class='bx bx-trash iconDelete no'></i></span>
+                <span onClick={()=>handleEdit(item.importId)}> <i className='bx bx-edit-alt iconEdit'> </i></span>
+                <span onClick={()=>handleDelete(item.importId)}> <i className='bx bx-trash iconDelete no'></i></span>
             </td> */}
         </tr>
     )
@@ -323,7 +323,7 @@ function EditOrder() {
         <div>
             <div className="order-detail-container">
                 <h2 className="title">
-                    <span><i class='bx bx-right-arrow icon'></i></span>
+                    <span><i className='bx bx-right-arrow icon'></i></span>
                     <span>Edit Order</span>
                 </h2>
                 <div>

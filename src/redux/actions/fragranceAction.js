@@ -11,7 +11,7 @@ const getListFragrances = (fragrancesList) => ({
 export const getListFragrancesAsync = () => (dispatch) => {
         FragranceService.getAllFragrances()
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(getListFragrances(response.data.reverse()));
         })
         .catch((error) => {
@@ -28,7 +28,7 @@ export const createFragranceAsync = ({ name, description }) => {
     return async function(dispatch) {     
         try{
             let response = (await FragranceService.createFragrance({ name, description }) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(createFragrance());
@@ -43,7 +43,7 @@ export const createFragranceAsync = ({ name, description }) => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false
@@ -82,13 +82,13 @@ const deleteFragrance = () => ({
 export const deleteFragranceAsync = (fragranceId) => (dispatch) => {
         FragranceService.deleteFragrance(fragranceId)
         .then(response => {
-            console.log("response: ", response);
+
             dispatch(deleteFragrance());
             dispatch(getListFragrancesAsync());
             toast.success("DELETE SUCCESS");
         })
         .catch((error) => {
-            console.log("error.response: ", error.response);
+
             // const errorList = Object.values(error.response.data.message);
             // errorList.map((item) => {
             //     toast.error(item);
@@ -107,7 +107,7 @@ export const editFragranceAsync = ({id, name, description })  => {
     return async function(dispatch) {     
         try{
             let response = (await FragranceService.editFragrance({ id, name, description }) );
-            console.log("resposeeeeeeeeee: ",response);
+
             // eslint-disable-next-line
             if(response.status == 200){
                 dispatch(editFragrance());
@@ -122,7 +122,7 @@ export const editFragranceAsync = ({id, name, description })  => {
                 
             } 
         }catch(error){
-            console.log("error.response: ", error.response);
+
             toast.error(error.response.data)
             return{
                 ok: false

@@ -1,5 +1,6 @@
 import './item.scss'
 import Button01 from '../../share/Button01'
+import { returnUrl } from '../../../helpers'
 
 
 export default function Item({
@@ -13,7 +14,7 @@ export default function Item({
 }){
     return(
         <div className="type-product">
-            <div className="product-image"><img src={`${process.env.PUBLIC_URL}${image}`} alt=""></img></div>
+            <div className="product-image"><img src={returnUrl(image)} alt=""></img></div>
             <div className="info">{children}</div>
             <div className="product-name"><Button01 isRadios={isRadios} linkTo={linkTo} width={width} height={height}> {name} </Button01></div>         
         </div>
