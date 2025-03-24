@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/DC-UI-PerfumeShop/static/css/main.e41bee14.chunk.css",
-    "main.js": "/DC-UI-PerfumeShop/static/js/main.142b895f.chunk.js",
-    "main.js.map": "/DC-UI-PerfumeShop/static/js/main.142b895f.chunk.js.map",
-    "runtime-main.js": "/DC-UI-PerfumeShop/static/js/runtime-main.d5dd04d2.js",
-    "runtime-main.js.map": "/DC-UI-PerfumeShop/static/js/runtime-main.d5dd04d2.js.map",
+    "main.js": "/DC-UI-PerfumeShop/static/js/main.a481a247.chunk.js",
+    "main.js.map": "/DC-UI-PerfumeShop/static/js/main.a481a247.chunk.js.map",
+    "runtime-main.js": "/DC-UI-PerfumeShop/static/js/runtime-main.528cfd58.js",
+    "runtime-main.js.map": "/DC-UI-PerfumeShop/static/js/runtime-main.528cfd58.js.map",
     "static/css/2.a9d787dc.chunk.css": "/DC-UI-PerfumeShop/static/css/2.a9d787dc.chunk.css",
-    "static/js/2.a74249b6.chunk.js": "/DC-UI-PerfumeShop/static/js/2.a74249b6.chunk.js",
-    "static/js/2.a74249b6.chunk.js.map": "/DC-UI-PerfumeShop/static/js/2.a74249b6.chunk.js.map",
-    "static/js/3.4e262bf0.chunk.js": "/DC-UI-PerfumeShop/static/js/3.4e262bf0.chunk.js",
-    "static/js/3.4e262bf0.chunk.js.map": "/DC-UI-PerfumeShop/static/js/3.4e262bf0.chunk.js.map",
+    "static/js/2.6d805cce.chunk.js": "/DC-UI-PerfumeShop/static/js/2.6d805cce.chunk.js",
+    "static/js/2.6d805cce.chunk.js.map": "/DC-UI-PerfumeShop/static/js/2.6d805cce.chunk.js.map",
+    "static/js/3.6ddb331f.chunk.js": "/DC-UI-PerfumeShop/static/js/3.6ddb331f.chunk.js",
+    "static/js/3.6ddb331f.chunk.js.map": "/DC-UI-PerfumeShop/static/js/3.6ddb331f.chunk.js.map",
     "index.html": "/DC-UI-PerfumeShop/index.html",
     "static/css/2.a9d787dc.chunk.css.map": "/DC-UI-PerfumeShop/static/css/2.a9d787dc.chunk.css.map",
     "static/css/main.e41bee14.chunk.css.map": "/DC-UI-PerfumeShop/static/css/main.e41bee14.chunk.css.map",
-    "static/js/2.a74249b6.chunk.js.LICENSE.txt": "/DC-UI-PerfumeShop/static/js/2.a74249b6.chunk.js.LICENSE.txt",
+    "static/js/2.6d805cce.chunk.js.LICENSE.txt": "/DC-UI-PerfumeShop/static/js/2.6d805cce.chunk.js.LICENSE.txt",
     "static/media/boxicons.min.css": "/DC-UI-PerfumeShop/static/media/boxicons.cbd149c5.ttf",
     "static/media/slick-theme.css": "/DC-UI-PerfumeShop/static/media/slick.c94f7671.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.d5dd04d2.js",
+    "static/js/runtime-main.528cfd58.js",
     "static/css/2.a9d787dc.chunk.css",
-    "static/js/2.a74249b6.chunk.js",
+    "static/js/2.6d805cce.chunk.js",
     "static/css/main.e41bee14.chunk.css",
-    "static/js/main.142b895f.chunk.js"
+    "static/js/main.a481a247.chunk.js"
   ]
 }
